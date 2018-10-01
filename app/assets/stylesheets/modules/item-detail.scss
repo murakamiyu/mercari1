@@ -1,0 +1,252 @@
+body {
+  background-color: #f0f0f0;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+figure{
+  margin: 0px;
+}
+
+a {
+  color: #0099e8;
+  text-decoration: none;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.l-container {
+  margin: 40px 33.5px 0px 33.5px;
+}
+
+.item-box-container {
+  background-color: white;
+  height: 1259px;
+  padding: 24px 40px 40px 40px;
+  width: 620px;
+}
+
+.item-name {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.item-main-content {
+  background-color: #f0f0f0;
+  height: 375px;
+  margin: 0 auto;
+  margin-top: 16px;
+  width: 620px;
+}
+
+.item-photo {
+  height: 375px;
+  float: left;
+  width: 300px;
+}
+
+.active {
+  height: 300px;
+  width: 300px;
+}
+
+.owl-dot-inner img {
+  float: left;
+  height: 75px;
+  width: 75px;
+}
+
+.item-detail-table {
+  background-color: lightgray;
+  height: 373px;
+  font-weight: 100;
+  float: right;
+  width: 298px;
+}
+
+.item-detail-table th {
+  background-color: #f5f5f5;
+  border-image-width: 1px;
+}
+
+.table-1-2 {
+  height: 42px;
+  padding: 8px;
+  width: 99px;
+}
+
+.item-detail-table td {
+  background-color: white;
+  border-width: 1px;
+  border-color: #f5f5f5;
+  line-height: 0.6em; 
+  padding: 8px;
+}
+
+.item-user-ratings {
+  float: left;
+  width: 33%;
+}
+
+.material-icons .md-light {
+  color: rgba(0, 0, 255, 0.5);
+}
+
+.icon-smile {
+  color: red;
+  font-size: 10px;
+}
+
+.icon-neutral {
+  color: orange;
+  font-size: 10px;
+}
+
+.icon-bad {
+  color: blue;
+  font-size: 10px;
+}
+
+.item-user-ratings span {
+
+}
+
+.fa-angle-right {
+  font-size: 17px; 
+}
+
+.item-price-box {
+  height: 50px;
+  margin-top: 24px;
+  width: 620px;
+}
+
+.item-shipping-fee {
+  font-size: 16px;
+}
+
+.item-price {
+  font-size: 50px;
+  margin-right: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.item-buy-btn {
+  background: #888;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  height: 60px;
+  line-height: 60px;
+  margin: 16px auto 0px;
+  text-align: center;
+  transition: all ease-out .3s;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  width: 620px;
+}
+
+.item-description {
+  padding-top: 32px;
+}
+
+.item-description-inner {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  white-space: pre-wrap;
+}
+
+.item-button-container {
+  height: 30px;
+  margin-top: 16px;
+  width: 620px;
+}
+
+.item-button {
+  border-radius: 40px;
+  color: #333;
+  background: #f5f5f5;
+  padding: 8px 16px;
+}
+
+.item-button-report {
+  margin-left: 16px;
+}
+
+.item-button-left {
+  float: left;
+}
+
+.item-button-right {
+  float: right;
+}
+
+.item-detail-message {
+  margin-top: 8px;
+}
+
+.message-content {
+  background-color: white;
+  height: 1259px;
+  padding: 24px 40px 40px 40px;
+  width: 620px;
+}
+
+.message-items li {
+  list-style: none;
+}
+
+.message-items img {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width:  40px;       /* ※縦横を同値に */
+  height: 40px;       /* ※縦横を同値に */
+}
+
+.message-user {
+  color: black;
+  float: left;
+  position: relative;
+  text-decoration: none;
+}
+
+.message-user figcaption {
+  left: 56px;
+  position: absolute;
+}
+
+.message-body {
+  float: right;
+  position: relative;
+  width: calc(100% - 56px);
+  padding: 16px;
+  background: #eef0f4;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.message-icons {
+  margin-top: 8px;
+}
