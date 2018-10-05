@@ -1,11 +1,11 @@
 $(function() {
-  $(".pc-header-nav-child").on("mouseover", function() {
-    var hoveringParent = $(this).parent().parent().find('h3 a');
+  $(".pc-header-nav-child-wrap").on("mouseover", function() {
+    var hoveringParent = $(this).prev().find('a');
     $(hoveringParent).addClass("active");
   });
 
-  $(".pc-header-nav-child").on("mouseout", function() {
-    var hoveringParent = $(this).parent().parent().find('h3 a');
+  $(".pc-header-nav-child-wrap").on("mouseout", function() {
+    var hoveringParent = $(this).prev().find('a');
     $(hoveringParent).removeClass("active");
   });
 
