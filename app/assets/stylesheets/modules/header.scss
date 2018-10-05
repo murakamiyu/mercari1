@@ -261,7 +261,9 @@ input[type='search'] {
 }
 
 .icon-search:before {
-  content: '\e025';
+  content: 'search';
+  font-family: "Material Icons";
+  font-size: 19.25px;
 }
 
 .pc-header-nav {
@@ -506,7 +508,9 @@ element.style {
 }
 
 .icon-bell:before {
-  content: '\e009';
+  content: 'notifications_none';
+  font-family: "Material Icons";
+  font-size: 21px;
 }
 
 .pc-header-user-nav > li > a span {
@@ -665,7 +669,9 @@ i {
 }
 
 .icon-arrow-right:before {
-  content: '\e005';
+  content: 'arrow_forward_ios';
+  font-family: 'Material Icons';
+  font-size: 17px;
 }
 
 .pc-header-mypage-box .mypage-nav-list li:first-child {
@@ -828,7 +834,9 @@ i {
 }
 
 .icon-check:before {
-  content: '\e00e';
+  content: 'check';
+  font-family: "Material Icons";
+  font-size: 28px;
 }
 
 .pc-header-user-nav {
