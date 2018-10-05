@@ -1,22 +1,22 @@
 body {
-    position: relative;
-    min-height: 100%;
-    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-    font-size: 14px;
-    color: rgb(51, 51, 51);
-    line-height: 1;
-    background: rgb(245, 245, 245);
- }
+  position: relative;
+  min-height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+}
 
 // @media screen and (min-width: 768px)
+
 .single-header {
   height: 128px;
   text-align: center;
-}
-
-.single-header h1 {
-  display: inline-block;
-  margin: 40px 0 0;
+  h1 {
+    display: inline-block;
+    margin: 40px 0 0;
+  }
 }
 
 header {
@@ -24,7 +24,7 @@ header {
 }
 
 :root {
-    cursor: auto;
+  cursor: auto;
 }
 
 .l-single-container {
@@ -58,24 +58,23 @@ header {
 }
 
 .buy-content-inner {
-    max-width: 320px;
-    margin: 0 auto;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .buy-item-image {
-    font-size: 22px;
-}
-
-.buy-item-image img {
+  font-size: 22px;
+  img {
     height: 148px;
     width: 148px;
     object-fit: cover;
+  }
 }
 
 .buy-item-name {
-    margin: 8px 0 0;
-    font-size: 16px;
-    line-height: 1.5;
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .buy-form p {
@@ -105,10 +104,9 @@ header {
 
 .buy-accordion {
   margin: 16px 0 0;
-}
-
-.buy-accordion .accordion-toggle {
-  padding: 16px;
+  .accordion-toggle {
+    padding: 16px;
+  }
 }
 
 .buy-you-pay {
@@ -119,30 +117,29 @@ header {
   display: table-cell;
   padding: 16px 0;
   float: right;
-}
-
-.buy-price-cell:first-child {
-  float: left;
+  &:first-child {
+    float: left;
+  }
 }
 
 .buy-item .btn-red {
-    margin: 16px 0 0;
+  margin: 16px 0 0;
 }
 
 .btn-red {
-    background: #ea352d;
-    border: 1px solid #ea352d;
-    color: #fff;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
 }
 
 .btn-default {
-    display: block;
-    width: 100%;
-    line-height: 48px;
-    font-size: 14px;
-    border: 1px solid transparent;
-    -webkit-transition: all ease-out .3s;
-    transition: all ease-out .3s;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
   cursor: pointer;
   text-align: center;
 }
@@ -173,44 +170,41 @@ header {
 }
 
 // @media screen and (min-width: 768px)
+
 .single-footer {
   width: 456px;
   height: 220px;
   margin: 0 auto;
-}
-
-.single-footer {
-    // position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    height: 250px;
-    padding: 40px 0;
-    text-align: center;
-}
-
-.single-footer li {
-  display: inline-block;
-  font-size: 12px;
-  margin: 0 0 0 16px;
-}
-
-.single-footer a {
+  // position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 250px;
+  padding: 40px 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 0 0 16px;
+  }
+  a {
     display: block;
     color: #333;
+  }
 }
 
 .single-footer-logo {
-    width: 80px;
-    height: 65px;
-    margin: 40px auto 0;
+  width: 80px;
+  height: 65px;
+  margin: 40px auto 0;
 }
 
-.single-footer p {
+.single-footer {
+  p {
     margin: 8px 0 0;
-}
-
-.single-footer small {
+  }
+  small {
     font-size: 12px;
+  }
 }
