@@ -10,85 +10,79 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-
-
-<div class="single-container">
+    <div class="single-container">
       <header class="single-header">
         <h1>
-                      <a href="https://www.mercari.com/jp/">
-              <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?249128278" alt="mercari">
-            </a>
-                  </h1>
-
-
+          <a href="https://www.mercari.com/jp/">
+            <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?249128278" alt="mercari">
+          </a>
+        </h1>
       </header>
 
       <main class="single-main">
-          <section class="l-single-container">
-    <h2 class="l-single-head">新規会員登録</h2>
+        <section class="l-single-container">
+          <h2 class="l-single-head">新規会員登録</h2>
+          <div class="l-single-inner">
+            <div class="l-single-content">
 
-    <div class="l-single-inner">
-      <div class="l-single-content">
+              <button id="facebook-login" class="btn-default btn-sns btn-sns-facebook">
+                <i class="icon-facebook"></i>
+                Facebookで登録
+              </button>
+              <button id="google-login" class="btn-default btn-sns btn-sns-google">
+                <i class="icon-google-plus"></i>
+                Googleで登録
+              </button>
+              <a href="/tests/sms_confirmation/" class="btn-default btn-mail">
+                <i class="icon-mail"></i>
+                メールアドレスで登録
+              </a>
+            </div>
+          </div>
+        </section>
 
-        <button id="facebook-login" class="btn-default btn-sns btn-sns-facebook">
-          <i class="icon-facebook"></i>
-          Facebookで登録
-        </button>
-        <button id="google-login" class="btn-default btn-sns btn-sns-google">
-          <i class="icon-google-plus"></i>
-          Googleで登録
-        </button>
-        <a href="/tests/sms_confirmation/" class="btn-default btn-mail">
-          <i class="icon-mail"></i>
-          メールアドレスで登録
-        </a>
-      </div>
-    </div>
-  </section>
+        <form id="login_form_facebook" action="/jp/signup/facebook/" method="POST" novalidate="novalidate">
+          <input type="hidden" name="__csrf_value" value="e203f579dbecdb67b8630f311595e1117ef3310ca2171b49818de60279ba512a366bb1a3c087f418452d44c9b51dc47728e9c4de5c08939b83fad3b88385bec0f">
+          <input type="hidden" name="nickname" value="">
+          <input type="hidden" name="email" value="">
+          <input type="hidden" name="facebook_user_id" value="">
+          <input type="hidden" name="facebook_access_token" value="">
+          <input type="hidden" name="login_type" value="facebook">
+        </form>
 
-    <form id="login_form_facebook" action="/jp/signup/facebook/" method="POST" novalidate="novalidate">
-    <input type="hidden" name="__csrf_value" value="e203f579dbecdb67b8630f311595e1117ef3310ca2171b49818de60279ba512a366bb1a3c087f418452d44c9b51dc47728e9c4de5c08939b83fad3b88385bec0f">
-    <input type="hidden" name="nickname" value="">
-    <input type="hidden" name="email" value="">
-    <input type="hidden" name="facebook_user_id" value="">
-    <input type="hidden" name="facebook_access_token" value="">
-    <input type="hidden" name="login_type" value="facebook">
-      </form>
-
-    <form id="login_form_google" action="/jp/signup/google/" method="POST" novalidate="novalidate">
-    <input type="hidden" name="__csrf_value" value="e203f579dbecdb67b8630f311595e1117ef3310ca2171b49818de60279ba512a366bb1a3c087f418452d44c9b51dc47728e9c4de5c08939b83fad3b88385bec0f">
-    <input type="hidden" name="nickname" value="">
-    <input type="hidden" name="email" value="">
-    <input type="hidden" name="google_user_id" value="">
-    <input type="hidden" name="google_access_token" value="">
-    <input type="hidden" name="login_type" value="google">
-      </form>
-  <input type="hidden" id="google_client_id" value="238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com">
-  <input type="hidden" id="facebook_app_id" value="466308336793848">
+        <form id="login_form_google" action="/jp/signup/google/" method="POST" novalidate="novalidate">
+          <input type="hidden" name="__csrf_value" value="e203f579dbecdb67b8630f311595e1117ef3310ca2171b49818de60279ba512a366bb1a3c087f418452d44c9b51dc47728e9c4de5c08939b83fad3b88385bec0f">
+          <input type="hidden" name="nickname" value="">
+          <input type="hidden" name="email" value="">
+          <input type="hidden" name="google_user_id" value="">
+          <input type="hidden" name="google_access_token" value="">
+          <input type="hidden" name="login_type" value="google">
+        </form>
+        <input type="hidden" id="google_client_id" value="238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com">
+        <input type="hidden" id="facebook_app_id" value="466308336793848">
       </main>
 
-              <footer class="single-footer">
-          <nav>
-            <ul class="clearfix">
-              <li>
-                <a href="https://www.mercari.com/jp/privacy/">プライバシーポリシー</a>
-              </li>
-              <li>
-                <a href="https://www.mercari.com/jp/tos/">メルカリ利用規約</a>
-              </li>
-                              <li>
-                  <a href="https://www.mercari.com/jp/tokutei/">特定商取引に関する表記</a>
-                </li>
-                          </ul>
-          </nav>
-          <a href="https://www.mercari.com/jp/" class="single-footer-logo">
-            <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?249128278" alt="mercari" width="80" height="65">
-          </a>
-          <p>
-            <small>© 2018 Mercari</small>
-          </p>
-        </footer>
-          </div>
-
-</body>
+      <footer class="single-footer">
+        <nav>
+          <ul class="clearfix">
+            <li>
+              <a href="https://www.mercari.com/jp/privacy/">プライバシーポリシー</a>
+            </li>
+            <li>
+              <a href="https://www.mercari.com/jp/tos/">メルカリ利用規約</a>
+            </li>
+            <li>
+              <a href="https://www.mercari.com/jp/tokutei/">特定商取引に関する表記</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="https://www.mercari.com/jp/" class="single-footer-logo">
+          <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?249128278" alt="mercari" width="80" height="65">
+        </a>
+        <p>
+          <small>© 2018 Mercari</small>
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>
