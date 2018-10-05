@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charaset="UTF-8"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <title>Mercari</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+
+
+<div class="single-container">
+      <header class="single-header">
+        <h1>
+                      <a href="/">
+              <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?249128278" alt="mercari">
+            </a>
+                  </h1>
+
+
+  <nav class="progress-bar signup-bar">
+    <ol class="clearfix">
+      <li class="through">
+        会員情報
+        <div class="progress-status" id="aa"></div>
+      </li>
+      <li class="through">
+        電話番号認証
+        <div class="progress-status" id="aa"></div>
+      </li>
+      <li class="through">
+        住所入力
+        <div class="progress-status" id="aa"></div>
+      </li>
+      <li class="through">
+        支払い方法
+        <div class="progress-status" id="aa"></div>
+      </li>
+      <li class="active">
+        完了
+        <div class="progress-status-last" id="bb"></div>
+      </li>
+    </ol>
+  </nav>
+        </header>
+
+      <main class="single-main">
+          <section class="l-single-container">
+    <h2 class="l-chapter-head">完了</h2>
+
+
+
+<div class="l-chapter-container">
+        <form action="https://www.mercari.com/jp/logout/" method="POST" class="l-single-inner" novalidate="novalidate">
+      <div class="l-single-content">
+        <!-- <button type="submit" class="btn-default btn-red">登録が完了しました</button> -->
+        <a href="/" class="btn-default btn-red">登録が完了しました</a>
+        <input type="hidden" name="__csrf_value" value="">
+      </div>
+    </form>
+
+
+
+
+
+              <footer class="single-footer">
+          <nav>
+            <ul class="clearfix">
+              <li>
+                <a href="https://www.mercari.com/jp/privacy/">プライバシーポリシー</a>
+              </li>
+              <li>
+                <a href="https://www.mercari.com/jp/tos/">メルカリ利用規約</a>
+              </li>
+                              <li>
+                  <a href="https://www.mercari.com/jp/tokutei/">特定商取引に関する表記</a>
+                </li>
+                          </ul>
+          </nav>
+          <a href="https://www.mercari.com/jp/" class="single-footer-logo">
+            <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?249128278" alt="mercari" width="80" height="65">
+          </a>
+          <p>
+            <small>© 2018 Mercari</small>
+          </p>
+        </footer>
+          </div>
+
+</body>
+</html>
