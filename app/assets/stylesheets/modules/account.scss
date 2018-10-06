@@ -1,22 +1,22 @@
 .single-container {
   padding: 0 0 250px;
-  .single-header {
+  &__header {
     height: 128px;
     text-align: center;
   }
 }
 
-.l-single-container {
+.single-main__l-single-container {
   width: 700px;
   margin: 0 auto;
   background: #fff;
-  .l-single-head { 
+  &__l-single-head { 
     padding: 32px 16px;
     font-size: 22px;
     line-height: 1.5;
     text-align: center;
   }
-  .l-single-inner {
+  &__l-single-inner {
     padding: 64px;
   }
 }
@@ -71,17 +71,18 @@
   height: 250px;
   padding: 40px 0;
   text-align: center;
-  ul {
+  &__list {
     font-size: 12px;
+    &__a-list {
+      display: inline-block;
+      margin: 0 0 0 16px;
+    }
   }
-  a {
+  .link-style {
     color: #333;
     display: block;
   }
-  li {
-    display: inline-block;
-    margin: 0 0 0 16px;
-  }
+  
   .single-footer-logo {
     width: 80px;
     height: 65px;
@@ -93,46 +94,46 @@
 }
 
 // ここから電話番号
-.single-header {
+.single-container__header {
   height: 128px;
-  h1 {
+  &__logo-position {
     margin: 40px 0 0;
     display: inline-block;
   }
-  .progress-bar {
+  &__progress-bar {
     display: inline-block;
-    vertical-align: top;
-    ol {
+    // vertical-align: top;
+    .progress-dots {
       margin: 0;
       width: 472px;
-    }
-    li {
-      margin: 0 40px 0 0;
-      width: 72px;
-      position: relative;
-      z-index: 1;
-      display: inline-block;
-      min-width: 40px;
-      margin: 0 5% 0 0;
-      font-size: 12px;
-      color: #888;
-    }
-    li:last-child {
+      &__a-dot {
+        margin: 0 40px 0 0;
+        width: 72px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        min-width: 40px;
+        margin: 0 5% 0 0;
+        font-size: 12px;
+        color: #888;
+      }
+      &__a-dot:last-child {
       margin: 0;
-    }
-    li.through .progress-status {
-      background: #ea352d;
-    }
-    li.active {
-      font-weight: 600;
-      color: #ea352d;
-    }
-    li.active {
-      font-weight: 600;
-      color: #ea352d;
-    }
-    li.active .progress-status {
-      background: #ea352d;
+      }
+      &__a-dot.through .progress-status {
+        background: #ea352d;
+      }
+      &__a-dot.active {
+        font-weight: 600;
+        color: #ea352d;
+      }
+      &__a-dot.active {
+        font-weight: 600;
+        color: #ea352d;
+      }
+      &__a-dot.active .progress-status {
+        background: #ea352d;
+      }
     }
   }
 }
