@@ -1,6 +1,34 @@
 Rails.application.routes.draw do
   root 'tests#index'
-  resources :items, only: [:new]
-  resources :tests, only: [:index]
-  resources :mains, only: [:index]
+  get 'mypages/index', to: 'mypages#index'
+  get 'mypages/profile', to: 'mypages#profile'
+  get 'mypages/deliver_adress', to: 'mypages#deliver_adress'
+  get 'mypages/card', to: 'mypages#card'
+  get 'mypages/card_new', to: 'mypages#creditnew'
+  get 'mypages/card_after', to: 'mypages#creditafter'
+  get 'mypages/email_password', to: 'mypages#email_password'
+  get 'mypages/identification', to: 'mypages#identification'
+  get 'mypages/sms_confirmation', to: 'mypages#sms_confirmation'
+  get 'mypages/logout', to: 'mypages#logout'
+  get 'mypages/sales_transfer', to: 'mypages#sales_transfer'
+  get 'mypages/points_confirmation', to: 'mypages#points_confirmation'
+  get 'mypages/points_history', to: 'mypages#points_history'
+  get 'mypages/points_limit', to: 'mypages#points_limit'
+  get 'mypages/sales_history', to: 'mypages#sales_history'
+  get 'mypages/sales_tra_lim', to: 'mypages#sales_tra_lim'
+  get 'mypages/sales_tra_bank', to: 'mypages#sales_tra_bank'
+  get 'mypages/sales_tra_history', to: 'mypages#sales_tra_history'
+  get 'mypages/sales_tra_account_register', to: 'mypages#sales_tra_account_register'
+
+  get 'tests/order_status', to: 'tests#order_status'
+  get 'tests/item_detail', to: 'tests#item_detail'
+  get 'tests/purchase_pre_confirmation', to: 'tests#purchase_pre_confirmation'
+  get 'tests/purchase_confirmation', to: 'tests#purchase_confirmation'
+  get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
+  get 'tests/account', to: 'tests#account'
+  get 'tests/sms_confirmation', to: 'tests#sms_confirmation'
+  get 'tests/adress_new', to: 'tests#adress_new'
+  get 'tests/credit_new', to: 'tests#credit_new'
+  get 'tests/account_completion', to: 'tests#account_completion'
+  get 'tests/putting_item', to: 'tests#putting_item'
 end
