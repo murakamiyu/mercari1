@@ -12,7 +12,6 @@ $(function() {
 
   $(".pc-header-nav-grand-child-wrap").on("mouseover", function() {
     var hoveringChild = $(this).prev();
-    console.log(hoveringChild);
     $(hoveringChild).addClass("active");
   });
 
