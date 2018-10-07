@@ -11,13 +11,7 @@
 
   <body>
     <div class="single-container">
-      <header class="single-header">
-        <h1>
-          <a href="https://www.mercari.com/jp/">
-            <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2834800195" alt="mercari">
-          </a>
-        </h1>
-      </header>
+      <%= render "shared/single-header"%>
       <main class="single-main">
         <section class="l-single-container buy-item-container">
           <div class="transact-attention wait">
@@ -87,29 +81,8 @@
           </section>
         </section>
       </main>
-
-      <footer class="single-footer">
-        <nav>
-          <ul class="clearfix">
-            <li>
-              <a href="https://www.mercari.com/jp/privacy/">プライバシーポリシー</a>
-            </li>
-            <li>
-              <a href="https://www.mercari.com/jp/tos/">メルカリ利用規約</a>
-            </li>
-            <li>
-              <a href="https://www.mercari.com/jp/tokutei/">特定商取引に関する表記</a>
-            </li>
-          </ul>
-        </nav>
-        <a href="https://www.mercari.com/jp/" class="single-footer-logo">
-          <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2834800195" alt="mercari" width="80" height="65">
-        </a>
-        <p>
-          <small>&copy; 2018 Mercari</small>
-        </p>
-      </footer>
+      <%= render "shared/single-footer"%>
     </div>
-
   </body>
+
 </html>
