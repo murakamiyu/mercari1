@@ -177,7 +177,15 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+  i {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translate(0, -50%);
+  }
 }
+
+.transaction-user-icon 
 
 // @media screen and (min-width: 1068px)
 
@@ -222,12 +230,6 @@ i {
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
-
-.icon-arrow-right:before {
-  // content: '\e005';
-}
-
-// @media screen and (min-width: 1068px)
 
 .l-visible-large {
   display: block;
