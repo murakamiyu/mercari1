@@ -1,0 +1,187 @@
+<%= render "shared/header"%>
+<main class=" l-container clearfix">
+  <div class="l-content">
+  <section class="l-chapter-container">
+    <h2 class="l-chapter-head">取引画面</h2>
+      <div class="transact-attention wait">
+        <h3>
+          <i class="icon-time"></i>
+          <span>発送をお待ちください</span>
+        </h3>
+        <p>出品者からの発送通知をお待ちください</p>
+       </div>
+       <ul class="transact-guide text-right">
+        <li>
+          <a href="/jp/help_center/category/11/" target="_blank"><span>
+            購入した後の流れ
+          </span>
+            <i class="material-icons">keyboard_arrow_right</i>
+          </a>
+        </li>
+      </ul>
+      <div class="message-container">
+        <div class="message-content"> 
+          <form action="https://www.mercari.com/jp/transaction/message/m38566204988/" method="POST" class="message-form">
+            <input type="hidden" name="__csrf_value" value="0644e11ac11535f6ce17a85a24cf789dcfb1049d472209b13a8e9da33a515307a6ecb510ffa1d6c80c59470f9a493e48c506103a0118ad15071cc4ccc7f05d910">
+            <p>取引メッセージの内容は、必要に応じて事務局で確認しています</p>
+            <input type="hidden" name="item_id" value="m38566204988">
+            <textarea type="text" name="body" value="" class="textarea-default" ></textarea>
+            <button type="submit" class="message-submit btn-default btn-gray" >
+              <span>取引メッセージを送る</span>
+            </button>
+          </form>
+        </div>
+        <!-- <aside class="modal" data-modal="delete-comment" data-close="modal">
+          <div class="modal-inner modal-banner">
+            <div class="modal-body">
+              <div class="modal-head bold">確認</div>
+              <div data-comment="body"></div>
+              <br>
+              本当にこのコメントを削除してよろしいですか？
+            </div>
+            <form action="https://www.mercari.com/jp/comment/delete/" method="POST">
+              <div class="clearfix">
+                <div class="modal-btn modal-btn-cancel" data-close="modal">キャンセル</div>
+                <button type="submit" class="modal-btn modal-btn-submit">
+                  削除する
+                </button>
+              </div>
+              <input type="hidden" name="item_id" value="m38566204988">
+              <input type="hidden" name="comment_id" value="">
+              <input type="hidden" name="__csrf_value" value="0644e11ac11535f6ce17a85a24cf789dcfb1049d472209b13a8e9da33a515307a6ecb510ffa1d6c80c59470f9a493e48c506103a0118ad15071cc4ccc7f05d910">
+            </form>
+          </div>
+        </aside> -->
+      </div>
+      
+      <div class="message-content">
+        ※お困りの際は
+          <a href="/jp/help_center/category/2/" target="_blank">
+            よくある質問
+          </a>
+        をご確認ください。
+      </div>
+    </section>
+  </div>
+<!--     <aside class="modal" data-modal="seller-cancel" data-close="modal">
+      <div class="modal-inner modal-banner">
+        <div class="modal-body">
+          <div class="modal-head bold">取引をキャンセルしますか？</div>
+            キャンセル後、商品は出品停止状態になりますので、再度出品をお願いいたします
+          </div>
+          <div class="clearfix">
+            <div class="modal-btn modal-btn-cancel" data-close="modal">いいえ</div>
+            <form action="/jp/transaction/seller_cancel/done/m38566204988/" method="POST" novalidate="novalidate">
+              <input type="hidden" name="__csrf_value" value="0644e11ac11535f6ce17a85a24cf789dcfb1049d472209b13a8e9da33a515307a6ecb510ffa1d6c80c59470f9a493e48c506103a0118ad15071cc4ccc7f05d910">
+              <button type="submit" class="modal-btn modal-btn-submit">はい</button>
+            </form>
+          </div>
+        </div>
+      </aside> -->
+<!--       <aside class="modal" data-modal="buyer-cancel" data-close="modal">
+        <div class="modal-inner modal-banner">
+          <div class="modal-body">
+            <div class="modal-head bold">取引キャンセルを依頼しますか</div>
+            事務局にて取引内容を確認後、対応してまいります
+          </div>
+          <div class="clearfix">
+            <div class="modal-btn modal-btn-cancel" data-close="modal">キャンセル</div>
+            <form action="/jp/transaction/buyer_cancel/done/m38566204988/" method="POST" novalidate="novalidate">
+              <input type="hidden" name="__csrf_value" value="0644e11ac11535f6ce17a85a24cf789dcfb1049d472209b13a8e9da33a515307a6ecb510ffa1d6c80c59470f9a493e48c506103a0118ad15071cc4ccc7f05d910">
+              <button type="submit" class="modal-btn modal-btn-submit">はい</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </div> -->
+<!-- sidebar -->
+<div class="l-side">
+      <section class="l-side-container">
+  <h3 class="transact-info-head">取引情報</h3>
+  <div class="transact-info-inner">
+    <ul class="transact-info-table">
+            <li class="transact-info-table-row">
+        <span class="transact-info-table-cell">商品</span>
+        <ul class="transact-info-table-cell">
+          <li>
+            <a href="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m38566204988_1.jpg?1537838737">
+              <img src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m38566204988_1.jpg?1537838737otos/m38566204988_1.jpg?1537838737" class="lazyload" alt="">
+              <div class="transact-info-item bold">
+                くまのプーさん　一番くじ　D賞デザインプレート　1点
+                <br>
+                ¥ 780
+              </div>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="transact-info-table-row">
+        <span class="transact-info-table-cell">送料</span>
+        <ul class="transact-info-table-cell">
+          <li>
+            送料込み(出品者負担)
+          </li>
+        </ul>
+      </li>
+      <li class="transact-info-table-row">
+        <span class="transact-info-table-cell">販売手数料</span>
+        <ul class="transact-info-table-cell">
+          <li>¥ 78</li>
+        </ul>
+      </li>
+      <li class="transact-info-table-row">
+        <span class="transact-info-table-cell">配送料</span>
+        <ul class="transact-info-table-cell">
+          <li>¥ 380</li>
+        </ul>
+      </li>
+      <li class="transact-info-table-row">
+        <span class="transact-info-table-cell">販売利益</span>
+        <ul class="transact-info-table-cell">
+          <li>
+            ¥ 322
+          </li>
+        </ul>
+      </li>
+      <li class="transact-info-table-row">
+        <span class="transact-info-table-cell">購入日時</span>
+        <ul class="transact-info-table-cell">
+          <li>9月25日 10:34</li>
+        </ul>
+      </li>
+      <li class="transact-info-table-row">
+        <span class="transact-info-table-cell">商品ID</span>
+        <ul class="transact-info-table-cell">
+          <li>m38566204988</li>
+        </ul>
+      </li>   
+    </ul>
+</section>
+
+<section class="l-side-container">
+  <h3 class="transact-info-head">購入者情報</h3>
+    <div class="transact-info-inner">
+      <a href="https://www.mercari.com/jp/u/682131087/" class="transaction-user-icon">
+        <figure>
+          <div>
+            <img src="https://static-mercari-jp-imgtr2.akamaized.net/members/682131087.jpg?1504257382" alt="" width="40">
+          </div>
+          <figcaption class="bold">
+            <div class="transact-user-name">
+              ramram
+            </div>
+          </figcaption>
+        </figure>
+        <i class="icon-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+    <div class="l-visible-large">
+      <a href="https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8" target="_blank" class="side-banner">
+        <img src="//www-mercari-jp.akamaized.net/assets/img/common/jp/side_banner.jpg?3276806293" alt="Download Mercari Now">
+      </a>
+    </div>
+  </div>
+</main>
+
+<%= render "shared/footer" %>
