@@ -1,5 +1,5 @@
 <%= render "shared/header"%>
-<main class=" l-container clearfix">
+<main class="l-container-item-status clearfix">
   <div class="l-content">  
     <section class="l-chapter-container">
       <h2 class="l-chapter-head">取引画面</h2>
@@ -18,23 +18,23 @@
                     
       <section class="l-single-inner yuuyuu-content">
         <h3>配送状況</h3>
-        <nav class="progress-bar">
-          <ol class="clearfix">
-            <li class="active">
+        <nav class="single-container__header__progress-bar signup-bar">
+          <ol class="progress-dots progress-bar clearfix">
+            <li class="progress-dots__a-dot through">
               発送済み
-              <div class="progress-status"></div>
+              <div class="progress-status" id="aa"></div>
             </li>
-            <li class="">
+            <li class="progress-dots__a-dot active">
               輸送中
               <div class="progress-status"></div>
             </li>
-            <li class="">
+            <li class="progress-dots__a-dot">
               配達中
               <div class="progress-status"></div>
             </li>
-            <li class="">
+            <li class="progress-dots__a-dot">
               受取
-              <div class="progress-status"></div>
+              <div class="progress-status-last"></div>
             </li>
           </ol>
         </nav>
@@ -55,7 +55,7 @@
         <ul class="transact-review-list clearfix">
           <li>
             <input type="radio" name="fame" id="face1" value="good">
-            <div class="transact-review-icon smile-icon">
+            <div class="transact-review-icon">
               <i class="material-icons">sentiment_very_satisfied</i>
               <label for="face1">
                 良い
@@ -83,9 +83,10 @@
         </ul>
         <p>評価のコメントを記入しましょう。</p>
         <textarea name="message" placeholder="コメントはなくても構いませんが、お礼のメッセージなどを書くと喜ばれます。" class="textarea-default"></textarea>
-        <button type="submit" class="btn-default btn-red" disabled>
+        <a href="/tests/order_status_waiting/" class="btn-default btn-red">評価を投稿する</a>
+        <!-- <button type="submit" class="btn-default btn-red" disabled>
           評価を投稿する
-        </button>
+        </button> -->
       </form>
       <div class="message-container">  
         <div class="message-content">                                                  
