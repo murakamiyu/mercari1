@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  root 'tests#index'
-  get 'mains/index', to: 'mains#index'
+  root 'items#index'
+
+  resources :items, only: [:index, :show]
+  # get 'items/index', to: 'items#index'
+  # get 'items/show', to: 'items#show'
+
   get 'mains/profile', to: 'mains#profile'
   get 'mains/deliver_adress', to: 'mains#deliver_adress'
   get 'mains/card', to: 'mains#card'
@@ -33,7 +37,6 @@ Rails.application.routes.draw do
   get 'mains/review/history', to: 'mains#mypage_review_history'
 
   get 'tests/order_status', to: 'tests#order_status'
-  get 'tests/item_detail', to: 'tests#item_detail'
   get 'tests/purchase_pre_confirmation', to: 'tests#purchase_pre_confirmation'
   get 'tests/purchase_confirmation', to: 'tests#purchase_confirmation'
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
