@@ -1737,7 +1737,7 @@
       </nav>
 
       <div class="l-right">
-
+        <% if user_signed_in? %>
         <ul class="pc-header-user-nav">
           <li>
             <a href="/mypages/index" class="sp-header-user-icon pc-header-nav-root">
@@ -1875,6 +1875,16 @@
             </ul>
           </li>
         </ul>
+        <% else %>
+             <ul class="pc-header-login-nav">
+              <li>
+                <a href="/users/sign_in" class="sp-header-btn btn-red-a">ログイン</a>
+              </li>
+              <li>
+                <a href="/users/sign_up" class="sp-header-btn header-signup">新規会員登録</a>
+              </li>
+              </ul>
+        <% end %>
       </div>
     </div>
   </div>

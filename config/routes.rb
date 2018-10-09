@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'tests#index'
   get 'mypages/index', to: 'mypages#index'
   get 'mypages/profile', to: 'mypages#profile'
