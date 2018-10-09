@@ -1,0 +1,28 @@
+<section class="items-box">
+  <%= link_to "/items/#{item.id}", method: :get do %>
+  <!-- <a href="items/show/"> -->
+    <figure class="items-box-photo">
+      <figcaption>
+        <div class="item-sold-out-badge">
+        </div>
+      </figcaption>
+      <img src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m41307010251_1.jpg?1537893046" class=" is-higher-height lazyloaded" alt="タイトスカート NBB">
+    </figure>
+    <div class="items-box-body">
+      <h3 class="items-box-name font-2">
+        <%= item.name %>
+      </h3>
+      <div class="items-box-num clearfix">
+        <div class="items-box-price font-5">
+          <%= item.price %>
+        </div>
+        <div class="items-box-likes font-2">
+          <i class="far fa-heart gray"></i>
+          <span>13</span>
+        </div><br>
+        <p class="items-box-tax">(税込)</p>
+      </div>
+    </div>
+  <!-- </a> -->
+  <% end %>
+</section>

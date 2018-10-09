@@ -2,7 +2,7 @@
 <main class="l-container clearfix">
   <div class="l-content">
     <section class="item-box-container">
-      <h1 class="item-name">mipoさん専用 ナイキ ブレザー ミッド ナイキsb 28センチ</h1>
+      <h1 class="item-name"><%= @item.name %></h1>
       <div class="item-main-content clearfix">
         <div class="item-photo">
           <div class="owl-carousel owl-loaded owl-drag">
@@ -120,7 +120,8 @@
         <div class="item-buy-btn disabled f18-24">売り切れました</div>
         </a>
         <div class="item-description f14">
-          <p class="item-description-inner">nikeSB の blazer midです。多少使用感ありますがそこまで気にならないと思います。ですがあくまでも中古品ですのでご理解いただける方のみご購入お願いします。色がシルバーと明るめのオレンジでカナリかっこいいと思います。箱はありません。自己紹介もお読みください。よろしくお願いします。
+          <p class="item-description-inner">
+            <%= @item.text %>
           </p>
         </div>
 
