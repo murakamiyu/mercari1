@@ -21,18 +21,9 @@ ActiveRecord::Schema.define(version: 20181009071100) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nickname"
+    t.string   "nickname",                            null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "telephone",                           null: false
-    t.string   "family_name"
-    t.string   "first_name"
-    t.string   "family_name_kana"
-    t.string   "first_name_kana"
-    t.string   "postal_code"
-    t.string   "city"
-    t.string   "address1"
-    t.string   "address2"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

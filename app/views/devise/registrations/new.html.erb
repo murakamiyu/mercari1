@@ -38,57 +38,17 @@
 <div class="form-group">
       <%= f.label :password, "パスワード"%>
       <span class="form-require">必須</span>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", class: 'input-default' %>
 </div>
 <div class="form-group">
-        <%= f.label :password_confirmation %> <span class="form-require">必須</span><br />
+        <%= f.label :password_confirmation, "パスワード(確認)" %> <span class="form-require">必須</span><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input-default'%>
 </div>
-<div class="form-group">
-          <%= f.label :telephone, "携帯電話の番号を入力" %>
-          <%= f.telephone_field :telephone, autofocus: true, class: 'input-default', placeholder: "例）09012345678"%>
-</div>
-<div class="form-group">
-    <span class="form-require">必須</span>
-         <%= f.label :family_name, "お名前" %>
-         <%= f.text_field :family_name, autofocus: true, class: 'input-default', placeholder: "例）メルカリ" %>
-         <%= f.text_field :first_name, autofocus: true, class: 'input-default', placeholder: "例）太郎" %>
-</div>
-
-<div class="form-group">
-            <span class="form-require">必須</span>
-         <%= f.label :family_name, "お名前カナ" %>
-         <%= f.text_field :family_name_kana, autofocus: true, class: 'input-default', placeholder: "例）メルカリ" %>
-         <%= f.text_field :first_name_kana, autofocus: true, class: 'input-default', placeholder: "例）タロウ" %>
-</div>
-<div class="form-group">
-  <span class="form-require">必須</span>
-         <%= f.label :postal_code, "郵便番号" %>
-         <%= f.text_field :postal_code, autofocus: true, class: 'input-default', placeholder: "例）123-4567" %>
-        </div>
-<div class="form-group">
-  <span class="form-require">必須</span>
-         <%= f.label :city, "市区町村" %>
-         <%= f.text_field :city, autofocus: true, class: 'input-default', placeholder: "例）横浜市緑区" %>
-        </div>
-<div class="form-group">
-  <span class="form-require">必須</span>
-         <%= f.label :address1, "番地" %>
-         <%= f.text_field :address1, autofocus: true, class: 'input-default', placeholder:"例）青山1−1−1" %>
-        </div>
-        <div class="form-group">
-  <span class="form-require">必須</span>
-         <%= f.label :address2, "建物名" %>
-         <%= f.text_field :address2, autofocus: true, class: 'input-default', placeholder: "例）柳ビル103" %>
-        </div>
-    <input type="hidden" value="" name="after_save_callback">
+   <input type="hidden" value="" name="after_save_callback">
                 <div class="form-group">
           <div class="g-recaptcha signup-recaptcha" data-sitekey="6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&amp;co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&amp;hl=ja&amp;v=v1538375507325&amp;size=normal&amp;cb=vy7rxndzguf" width="304" height="78" role="presentation" name="a-urvaj3gw8x3h" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
                   </div>
-                      <button type="submit" class="btn-default btn-red btn-info">次へ進む</button>
+                      <button type="submit" class="btn-default btn-red btn-info">登録</button>
                     </div>
                   </section>
                 </main>
