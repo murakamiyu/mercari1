@@ -890,3 +890,47 @@ tem-list li.mypage-item-not-found {
 .bold {
   font-weight: 600;
 }
+
+
+// 非ログイン時
+
+.pc-header-login-nav>li {
+    display: inline-block;
+    margin: 0 0 0 8px;
+}
+
+.sp-header-btn {
+    display: block;
+    margin: 0 40px 0 0;
+    padding: 0 16px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.pc-header-login-nav .sp-header-btn {
+    margin: 0;
+}
+
+.header-signup {
+    display: block;
+    border: 1px solid #0099e8;
+    background: #fff;
+    color: #0099e8;
+}
+
+.btn-red-a{
+    margin: 16px 0 0;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100%;
+    // line-height: 48px;
+    /* font-size: 14px; */
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+}
