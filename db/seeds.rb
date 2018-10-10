@@ -21,3 +21,7 @@ end
 CSV.foreach('db/size.csv') do |row|
   Category.create(:size => row[0])
 end
+
+CSV.foreach('db/brand.csv') do |row|
+  Category.create(:brand => row[0])
+end
