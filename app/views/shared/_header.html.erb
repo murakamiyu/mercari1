@@ -1740,7 +1740,7 @@
         <% if user_signed_in? %>
         <ul class="pc-header-user-nav">
           <li>
-            <%= link_to mypages_index_path, class: "sp-header-user-icon pc-header-nav-root" do %
+            <%= link_to mains_top_path, class: "sp-header-user-icon pc-header-nav-root" do %>
               <figure>
                 <div>
                   <img src="https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png" alt="" width="32">
@@ -1823,7 +1823,7 @@
           </li>
 
           <li data-id="pc-header-user-nav" data-key="notification_list" data-url="https://www.mercari.com/jp/mypage/notification_and_todo_json/">
-            <%= link_to mypages_index_path, class: "pc-header-nav-root" do %>
+            <%= link_to mains_top_path, class: "pc-header-nav-root" do %>
               <i class="icon-bell"></i>
               <span>お知らせ</span>
               <div class="pc-header-nav-count">
@@ -1861,7 +1861,7 @@
 
 <!--                 やることリスト -->
           <li data-id="pc-header-user-nav" data-key="todo_list" data-url="https://www.mercari.com/jp/mypage/notification_and_todo_json/">
-            <%= link_to mypages_index_path, class: "pc-header-nav-root" do %>
+            <%= link_to mains_top_path, class: "pc-header-nav-root" do %>
               <i class="icon-check"></i>
               <span>やることリスト</span>
               <div class="pc-header-nav-count">
@@ -1876,14 +1876,14 @@
           </li>
         </ul>
         <% else %>
-             <ul class="pc-header-login-nav">
+           <ul class="pc-header-login-nav">
               <li>
                 <%= link_to 'ログイン', new_user_session_path, class: "sp-header-btn btn-red-a" %>
               </li>
               <li>
                 <%= link_to '新規会員登録', new_user_registration_path, class: "sp-header-btn header-signup" %>
               </li>
-              </ul>
+            </ul>
         <% end %>
       </div>
     </div>
