@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181010202243) do
+ActiveRecord::Schema.define(version: 20181010212816) do
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "area",       limit: 65535
@@ -41,11 +41,25 @@ ActiveRecord::Schema.define(version: 20181010202243) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",       limit: 65535, null: false
-    t.text     "text",       limit: 65535, null: false
-    t.integer  "price",                    null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "name",            limit: 65535,             null: false
+    t.text     "text",            limit: 65535,             null: false
+    t.integer  "price",                                     null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.integer  "category_id",                               null: false
+    t.integer  "brand_id"
+    t.integer  "size_id"
+    t.integer  "area_id",                                   null: false
+    t.integer  "condition",                                 null: false
+    t.integer  "shipping_payer",                            null: false
+    t.integer  "shipping_method",                           null: false
+    t.integer  "days_to_ship",                              null: false
+    t.integer  "trading_status",                default: 0, null: false
+    t.integer  "shipping_fee"
+    t.index ["area_id"], name: "index_items_on_area_id", using: :btree
+    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
+    t.index ["size_id"], name: "index_items_on_size_id", using: :btree
   end
 
   create_table "sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,4 +69,8 @@ ActiveRecord::Schema.define(version: 20181010202243) do
   end
 
   add_foreign_key "images", "items"
+  add_foreign_key "items", "areas"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "sizes"
 end
