@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   root 'items#index'
 
   resources :items, only: [:index, :show]
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get 'mains/sales_tra_bank', to: 'mains#sales_tra_bank'
   get 'mains/sales_tra_history', to: 'mains#sales_tra_history'
   get 'mains/sales_tra_account_register', to: 'mains#sales_tra_account_register'
-  
+
   get 'mains/top', to: 'mains#mypage'
   get 'mains/notification', to: 'mains#mypage_notification'
   get 'mains/todo', to: 'mains#mypage_todo'
