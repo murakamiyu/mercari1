@@ -49,4 +49,6 @@ Rails.application.routes.draw do
   get 'tests/account_completion', to: 'tests#account_completion'
   get 'tests/putting_item', to: 'tests#putting_item'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
+
+  resources :credits, only: [:index, :new, :create, :destroy]
 end
