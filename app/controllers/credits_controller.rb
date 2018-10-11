@@ -10,13 +10,11 @@ class CreditsController < ApplicationController
   end
 
   def create
-    # Credit.create(num: credit_params[:num], expire_month: credit_params[:expire_month], expire_year: credit_params[:expire_year], security_code: credit_params[:security_code], user_id: current_user.id)
     Credit.create(credit_params)
     redirect_to mains_top_path
   end
 
   def destroy
-    # credit = Credit.find(params[:id])
     @credit.destroy
     redirect_to mains_top_path
   end
