@@ -6,4 +6,10 @@ class Item < ApplicationRecord
   belongs_to :area
 
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  enum condition: %i(brand_new unused great slight_damaged damaged bad)
+  enum shipping_payer: %i(seller buyer)
+  enum shipping_method: %i(undecided merkari yu_mail letter_pack mail yamato yu_pack click_post yu_packet)
+  enum days_to_ship: %i(a_day_two two_three four_seven)
+
 end
