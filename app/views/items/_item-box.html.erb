@@ -6,7 +6,10 @@
         <div class="item-sold-out-badge">
         </div>
       </figcaption>
-      <img src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m41307010251_1.jpg?1537893046" class=" is-higher-height lazyloaded" alt="タイトスカート NBB">
+      <% item.images.each do |content| %>
+       <%= image_tag content.image %>
+      <% end %>
+      <!-- <img src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m41307010251_1.jpg?1537893046" class=" is-higher-height lazyloaded" alt="タイトスカート NBB"> -->
     </figure>
     <div class="items-box-body">
       <h3 class="items-box-name font-2">
