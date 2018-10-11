@@ -15,13 +15,13 @@ CSV.foreach('db/category.csv') do |row|
 end
 
 CSV.foreach('db/area.csv') do |row|
-  Category.create(:area => row[0])
+  Area.create(:area => row[0])
 end
 
 CSV.foreach('db/size.csv') do |row|
-  Category.create(:size => row[0])
+  Size.create(:size => row[0])
 end
 
 CSV.foreach('db/brand.csv') do |row|
-  Category.create(:brand => row[0])
+  Brand.create(:brand => row[0])
 end

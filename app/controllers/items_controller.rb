@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def new
-    @item = Item.new(item_params)
+    @item = Item.new
     4.times { @item.images.build }
   end
 

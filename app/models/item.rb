@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  MAX_POST_IMAGES_LENGTH = 4
+
   has_many :images
   belongs_to :category
   belongs_to :size
@@ -12,4 +14,5 @@ class Item < ApplicationRecord
   enum shipping_method: %i(undecided merkari yu_mail letter_pack mail yamato yu_pack click_post yu_packet)
   enum days_to_ship: %i(a_day_two two_three four_seven)
 
+  validates :images, length: {maximum: MAX_POST_IMAGES_LENGTH}
 end
