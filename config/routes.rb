@@ -3,9 +3,7 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
-  resources :items, only: [:index, :show]
-  # get 'items/index', to: 'items#index'
-  # get 'items/show', to: 'items#show'
+  resources :items, only: [:index,:new,:show,:create]
 
   get 'mains/profile', to: 'mains#profile'
   get 'mains/deliver_adress', to: 'mains#deliver_adress'
