@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items, only: [:index,:new,:show,:create,:edit,:update]
-  get 'items/purchase_pre_confirmation/:id/', to: 'items#purchase_pre_confirmation'
-  get 'items/purchase_confirmation/:id/', to: 'items#purchase_pconfirmation'
+  get 'items/:id/purchase_pre_confirmation/', to: 'items#purchase_pre_confirmation'
+  get 'items/:id/purchase_confirmation/', to: 'items#purchase_pconfirmation'
 
   get 'mains/profile', to: 'mains#profile'
   get 'mains/deliver_adress', to: 'mains#deliver_adress'
