@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   resources :users                     #tweets_controllerに対してのresourcesメソッド
   resources :addresses, only: [:new, :create, :edit, :update]
 
-  resources :items, only: [:index, :show]
-  # get 'items/index', to: 'items#index'
-  # get 'items/show', to: 'items#show'
+  resources :items, only: [:index,:new,:show,:create]
 
 
   get 'mains/profile', to: 'mains#profile'

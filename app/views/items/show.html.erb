@@ -11,7 +11,10 @@
             </div>
             <!-- 以下js使用 -->
             <div class="owl-item-inner set" data-thumbnail-class-name="">
-              <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m17702910592_1.jpg?1494669182" alt="mipoさん専用 ナイキ ブレザー ミッド ナイキsb 28センチ" class="owl-lazy active-image">
+              <% @item.images.each do |content| %>
+               <%= image_tag content.image, class: "owl-lazy active-image" %>
+              <% end %>
+              <!-- <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m17702910592_1.jpg?1494669182" alt="mipoさん専用 ナイキ ブレザー ミッド ナイキsb 28センチ" class="owl-lazy active-image"> -->
             </div>
             <div class="owl-nav disabled"></div>
             <div class="owl-dots">
@@ -112,7 +115,7 @@
           </div>
 
         <div class="item-price-box text-center">
-          <span class="item-price bold">¥ 2,650</span>
+          <span class="item-price bold">¥ <%= @item.price %></span>
           <span class="item-tax"> (税込)</span>
           <span class="item-shipping-fee">送料込み</span>
         </div>
