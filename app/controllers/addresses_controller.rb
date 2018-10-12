@@ -1,13 +1,12 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:edit, :update]
-
   def new
-    @user = current_user
-    @address = Address.where(user_id: @user.id).first_or_initialize
+    # @user = current_user
+    @address = current_user.address
   end
 
   def create
-    @address = Address.new(address_params)
+    @address = current_user.address.new(address_params)
     if @address.save
       redirect_to mains_top_path
     else
@@ -32,5 +31,4 @@ private
   def address_params
     params.require(:address).permit(:area, :city, :postal_code, :address1, :address2).merge(user_id: current_user.id)
   end
-
 end

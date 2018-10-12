@@ -110,10 +110,11 @@
     </a>
     </li>
       <li>
-        <a href="/addresses/new" class="mypage-nav-list-item ">
-          住所変更
-      <i class="fas fa-angle-right"></i>
-    </a>
+          <div class="mypage-nav-list-item" >
+            <%= link_to "住所変更", new_address_path, class: "link"%>
+            <i class="fas fa-angle-right"></i>
+          </div>
+       <!--  <a href="/addresses/new" class="mypage-nav-list-item "> -->
     </li>
       <li>
         <a href="/mains/card/" class="mypage-nav-list-item ">
