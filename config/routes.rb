@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
-  resources :items, only: [:index,:new,:show,:create,:edit,:update]
-  get 'items/:id/purchase_pre_confirmation/', to: 'items#purchase_pre_confirmation'
+  resources :items, only: [:index,:show,:new,:create,:edit,:update] do
+    member do
+      get :purchase_pre_confirmation
+    end
+  end
+
+  # get 'items/:id/purchase_pre_confirmation/', to: 'items#purchase_pre_confirmation'
   get 'items/:id/purchase_confirmation/', to: 'items#purchase_pconfirmation'
 
   get 'mains/profile', to: 'mains#profile'
@@ -39,14 +44,11 @@ Rails.application.routes.draw do
   get 'mains/review/history', to: 'mains#mypage_review_history'
 
   get 'tests/order_status', to: 'tests#order_status'
-  get 'tests/purchase_pre_confirmation', to: 'tests#purchase_pre_confirmation'
-  get 'tests/purchase_confirmation', to: 'tests#purchase_confirmation'
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
   get 'tests/sms_confirmation', to: 'tests#sms_confirmation'
   get 'tests/adress_new', to: 'tests#adress_new'
   get 'tests/credit_new', to: 'tests#credit_new'
   get 'tests/account_completion', to: 'tests#account_completion'
-  get 'tests/putting_item', to: 'tests#putting_item'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
 end

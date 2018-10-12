@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :purchase_pre_confirmation]
 
   def index
     @item1s = Item.limit(4).order("created_at DESC")
@@ -11,7 +12,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @images = @item.images
   end
 
@@ -30,17 +30,13 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.update(item_params) 
     if item.buyer_id?
-      redirect_to root_path
+      @item = Item.find(params[:id])
+      render 'purchase_confirmation' 
     end
   end
 
   def purchase_pre_confirmation
-    @item = Item.find(params[:id])
   end
-
-  # def purchase_confirmation
-  #   @item = Item.find(params[:id])
-  # end
 
   private
 
@@ -53,5 +49,9 @@ class ItemsController < ApplicationController
       :buyer_id,
       images_attributes: [:image]
     )
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
