@@ -1,5 +1,20 @@
 class ItemsController < ApplicationController
 
+  def index
+    @item1s = Item.limit(4).order("created_at DESC")
+    @item2s = Item.limit(4)
+    @item3s = Item.limit(4)
+    @item4s = Item.limit(4)
+    @item5s = Item.limit(4)
+    @item6s = Item.limit(4)
+    @item7s = Item.limit(4)
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    @images = @item.images
+  end
+
   def new
     @item = Item.new
     4.times { @item.images.build }
