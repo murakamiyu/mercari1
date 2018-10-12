@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'items#index'
+  resources :users                     #tweets_controllerに対してのresourcesメソッド
+  resources :addresses, only: [:new, :create, :edit, :update]
 
   resources :items, only: [:index,:new,:show,:create]
+
 
   get 'mains/profile', to: 'mains#profile'
   get 'mains/deliver_adress', to: 'mains#deliver_adress'
@@ -48,5 +51,9 @@ Rails.application.routes.draw do
   get 'tests/putting_item', to: 'tests#putting_item'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
 
+
   resources :credits, only: [:index, :new, :create, :destroy]
+  
+  resources :users, only: [:edit, :update]
+
 end
