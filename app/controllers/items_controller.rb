@@ -2,16 +2,33 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.build
+    4.times { @item.images.build }
   end
 
   def create
-    Item.create(item_params)
+    @item = Item.new(item_params)
+    @item.save
     redirect_to root_path
   end
 
+  def purchase_pre_confirmation
+    @item = Item.find(params[:id])
+  end
+
+  # def purchase_confirmation
+  #   @item = Item.find(params[:id])
+  # end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params) 
+    if item.buyer_id?
+      redirect_to root_path
+    end
+  end
+
   def index
-  	@item1s = Item.all
+  	@item1s = Item.limit(4).order("created_at DESC")
   	@item2s = Item.limit(4)
   	@item3s = Item.limit(4)
   	@item4s = Item.limit(4)
@@ -32,6 +49,8 @@ class ItemsController < ApplicationController
       :name,
       :text,
       :price,
+      :seller_id,
+      :buyer_id,
       images_attributes: [:image]
     )
   end

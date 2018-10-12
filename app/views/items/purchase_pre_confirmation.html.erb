@@ -18,16 +18,21 @@
           <section class="buy-content buy-item">
             <div class="buy-content-inner">
               <h3 class="buy-item-image">
-                <img src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m82430140965_1.jpg?1536235609" class="lazyload" alt="">
+                <% @item.images.first(1).each do |content| %>
+                  <%= image_tag content.image, class: "owl-lazy active-image" %>
+                <% end %>
+                <!-- <img src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m82430140965_1.jpg?1536235609" class="lazyload" alt=""> -->
               </h3>
-              <p class="buy-item-name bold">確かな力が身につくJavaScript「超」入門</p>
-              <form
+              <p class="buy-item-name bold"><%= @item.name %></p>
+              <%= form_for @item, :url => {:action => 'update'} do |f| %>
+                <%= f.hidden_field :buyer_id, value: current_user.id %>
+              <!-- <form
                   action=""
                   method="POST"
                   class="buy-form"
                   novalidate="novalidate">
-                <p class="buy-price-ja bold">
-                  ¥ 3,000
+                <p class="buy-price-ja bold"> -->
+                  ¥ <%= @item.price %>
                   <span class="item-shipping-fee f14 bold">送料込み</span>
                 </p>
                 <ul class="buy-accordion not-have">
@@ -41,13 +46,15 @@
                   <li class="buy-price-row buy-you-pay bold clearfix">
                     <div class="buy-price-cell">支払い金額</div>
                     <div class="buy-price-cell">
-                      <span data-buy-pay="3000">¥ 3,000</span>
+                      <span data-buy-pay="3000">¥ <%= @item.price %></span>
                     </div>
                   </li>
                 </ul>
-                <a href="/tests/purchase_confirmation" class="btn-default btn-red bold">購入する</a> 
-                <!-- <button type="submit" class="btn-default btn-red bold">購入する</button> -->
-              </form>
+                
+                <!-- <a href="/items/#{@item.id}" class="btn-default btn-red bold">購入する</a>  -->
+                <button type="submit" class="btn-default btn-red bold">購入する</button>
+              <!-- </form> -->
+              <% end %>
             </div>
           </section>
           <section class="buy-content buy-user-info">

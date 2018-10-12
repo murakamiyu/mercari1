@@ -1,8 +1,7 @@
 class Item < ApplicationRecord
   has_many :images
-  accepts_nested_attributes_for :images
+  belongs_to :seller, class_name: "User"
+  belongs_to :buyer, class_name: "User"
 
-  def set_main_image
-    images.image
-  end
+  accepts_nested_attributes_for :images
 end

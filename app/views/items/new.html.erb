@@ -8,6 +8,7 @@
           <div class="sell-container-inner">
             <h2 class="l-single-head">商品の情報を入力</h2>
             <%= form_for (@item) do |f| %>
+            <%= f.hidden_field :seller_id, value: current_user.id %>
               <div class="sell-upload-box">
                 <h3 class="sell-upload-head"> 出品画像 <span class="form-require">必須</span></h3>
                 <p>最大4枚までアップロードできます</p>
