@@ -69,7 +69,3 @@ gem 'pry-rails'
 gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'devise'
-
-
-
-
