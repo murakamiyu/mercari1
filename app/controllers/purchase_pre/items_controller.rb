@@ -16,14 +16,7 @@ class PurchasePre::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(
-      :name,
-      :text,
-      :price,
-      :seller_id,
-      :buyer_id,
-      images_attributes: [:image]
-    )
+    params.require(:item).permit(:buyer_id)
   end
 
 end

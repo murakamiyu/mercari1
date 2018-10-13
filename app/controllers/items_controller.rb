@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to :root
     else
-      redirect_to ({ action: new }), alert: '出品に失敗しました'
+      redirect_to :new_item , alert: '出品に失敗しました'
     end
   end
 
@@ -38,8 +38,6 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.update(item_params) 
   end
-
-
 
   private
 

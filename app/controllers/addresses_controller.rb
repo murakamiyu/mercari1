@@ -1,13 +1,14 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:edit, :update]
+  
   def new
     # @user = current_user
-    @address = current_user.address
+    @address = Address.new
   end
 
   def create
-    @address = current_user.address.new(address_params)
-    if @address.save
+    address = Address.new(address_params)
+    if address.save
       redirect_to mains_top_path
     else
       render :new
