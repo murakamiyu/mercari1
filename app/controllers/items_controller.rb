@@ -7,8 +7,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    4.times { @item.images.build }
+    @item.save
+    binding.pry
+    redirect_to :root
   end
+
+
 
   private
 
@@ -27,8 +31,9 @@ class ItemsController < ApplicationController
       :brand_id,
       :size_id,
       :area_id,
-      images_attributes: [:id, :image, :_destroy]
+      images_attributes: [:id, :image, :item_id, :_destroy]
     )
   end
 
 end
+

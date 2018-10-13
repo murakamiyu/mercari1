@@ -27,7 +27,7 @@
 
                   <div class="sell-upload-drop-box">
                     <%= f.fields_for :images do |image| %>
-                      <%= image.file_field :image, class: 'sell-upload-drop-file', multiple: true, style: "display:none;" %>
+                      <%= image.file_field :image, class: 'sell-upload-drop-file' %>
                         <pre class="visible-pc">ドラッグアンドドロップ
       またはクリックしてファイルをアップロード</pre>
                         <i class="icon-camera"></i>
@@ -84,6 +84,17 @@
                       <%= f.collection_select :size_id, Size.all, :id, :size, {prompt: "---"}, {class: "select-default"} %>
                       <i class="icon-arrow-bottom"></i>
                     </div>
+                  </div>
+
+                  <div class="form-group form-suggest-container">
+                    <label>ブランド<span class="form-arbitrary">任意</span></label>
+                    <div>
+                      <input class="input-default" value="" placeholder="例）シャネル">
+<!-- インクリメンタルサーチ用 -->
+                      <div>
+                      </div>
+
+                    </div><!-- react-empty: 274 -->
                   </div>
 
                   <div class="form-group">
