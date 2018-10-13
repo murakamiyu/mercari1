@@ -7,9 +7,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    binding.pry
-    redirect_to :root
+    if @item.save
+      redirect_to :root
+    else
+      redirect_to ({ action: new }), alert: '出品に失敗しました'
+    end
   end
 
 
