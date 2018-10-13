@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+
   MAX_POST_IMAGES_LENGTH = 4
 
   has_many :images
@@ -15,4 +16,9 @@ class Item < ApplicationRecord
   enum days_to_ship: %i(a_day_two two_three four_seven)
 
   validates :images, length: {maximum: MAX_POST_IMAGES_LENGTH}
+
+  def set_main_image
+    images.image
+  end
+
 end

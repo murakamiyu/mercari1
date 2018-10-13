@@ -280,7 +280,7 @@ input[type='search'] {
     font-size: 14px;
     font-weight: 400;
   }
-}
+}ß
 
 h2 {
   font-size: 22px;
@@ -312,11 +312,18 @@ a:hover {
   color: #0099e8;
 }
 
+.pc-header-user-nav>li:first-child {
+  padding: 0;
+}
+
 .pc-header-user-nav > li > a:hover {
   text-decoration: none;
   opacity: 1;
 }
 
+.pc-header-user-nav {
+    font-size: 0;
+}
 /*ーーーー以下カテゴリーーーーーー*/
 
 .pc-header-nav-parent-wrap {
@@ -438,7 +445,7 @@ element.style {
     }
     position: relative;
     display: inline-block;
-    padding: 0 0 0 16px;
+    padding: 0 0 0 12px;
     vertical-align: middle;
   }
   .sp-header-user-icon {
@@ -507,6 +514,11 @@ element.style {
   }
 }
 
+                            // カウント赤数字の非表示
+.pc-header-nav-count{
+  display: none;
+}
+
 .icon-bell:before {
   content: 'notifications_none';
   font-family: "Material Icons";
@@ -514,7 +526,7 @@ element.style {
 }
 
 .pc-header-user-nav > li > a span {
-  margin: 0 0 0 8px;
+  // margin: 0 0 0 8px;
 }
 
 .pc-header-nav-count {
@@ -554,6 +566,7 @@ element.style {
   /* 表示処理*/
   display: block;
 }
+
 
 .pc-header-mypage-box {
   left: 0;
@@ -671,7 +684,7 @@ i {
 .icon-arrow-right:before {
   content: 'arrow_forward_ios';
   font-family: 'Material Icons';
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .pc-header-mypage-box .mypage-nav-list li:first-child {
@@ -708,13 +721,6 @@ i {
     -webkit-transition: all ease-out .2s;
     transition: all ease-out .2s;
     position: absolute;
-    top: 50%;
-    right: 16px;
-    color: #ccc;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    -webkit-transition: all ease-out .2s;
-    transition: all ease-out .2s;
   }
 }
 
@@ -843,7 +849,6 @@ i {
 
 .pc-header-user-nav {
   > li > a span {
-    margin: 0 0 0 8px;
   }
   i, span {
     vertical-align: middle;
@@ -884,4 +889,48 @@ tem-list li.mypage-item-not-found {
 
 .bold {
   font-weight: 600;
+}
+
+
+// 非ログイン時
+
+.pc-header-login-nav>li {
+    display: inline-block;
+    margin: 0 0 0 8px;
+}
+
+.sp-header-btn {
+    display: block;
+    margin: 0 40px 0 0;
+    padding: 0 16px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.pc-header-login-nav .sp-header-btn {
+    margin: 0;
+}
+
+.header-signup {
+    display: block;
+    border: 1px solid #0099e8;
+    background: #fff;
+    color: #0099e8;
+}
+
+.btn-red-a{
+    margin: 16px 0 0;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100%;
+    // line-height: 48px;
+    /* font-size: 14px; */
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
 }

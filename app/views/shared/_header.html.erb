@@ -1,8 +1,9 @@
+<div class="row flex-container">
 <header class="pc-header visible-pc">
   <div class="pc-header-inner">
     <div class="clearfix">
       <h1 class="l-left">
-        <a href="/tests">
+        <a href="/tests/account/">
           <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2682216493" alt="mercari" width="134" height="36">
         </a>
       </h1>
@@ -1742,17 +1743,17 @@
       </nav>
 
       <div class="l-right">
-
+        <% if user_signed_in? %>
         <ul class="pc-header-user-nav">
           <li>
-            <a href="/mains" class="sp-header-user-icon pc-header-nav-root">
+            <%= link_to mains_top_path, class: "sp-header-user-icon pc-header-nav-root" do %>
               <figure>
                 <div>
                   <img src="https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png" alt="" width="32">
                 </div>
               </figure>
               <div>マイページ</div>
-            </a>
+              <% end %>
 
             <div class="pc-header-user-box pc-header-mypage-box">
               <div class="pc-header-mypage-state text-center">
@@ -1828,13 +1829,13 @@
           </li>
 
           <li data-id="pc-header-user-nav" data-key="notification_list" data-url="https://www.mercari.com/jp/mypage/notification_and_todo_json/">
-            <a href="https://www.mercari.com/jp/mypage/notification/" class="pc-header-nav-root" data-url="https://www.mercari.com/jp/mypage/notification_and_todo_json/">
+            <%= link_to mains_notification_path, class: "pc-header-nav-root" do %>
               <i class="icon-bell"></i>
               <span>お知らせ</span>
               <div class="pc-header-nav-count">
                 5
               </div>
-            </a>
+            <% end %>
 
 <!--             お知らせ -->
             <ul class="pc-header-user-box pc-header-notification-box mypage-item-list" data-id="pc-header-user-items">
@@ -1866,13 +1867,13 @@
 
 <!--                 やることリスト -->
           <li data-id="pc-header-user-nav" data-key="todo_list" data-url="https://www.mercari.com/jp/mypage/notification_and_todo_json/">
-            <a href="https://www.mercari.com/jp/mypage/todo/" class="pc-header-nav-root" data-url="https://www.mercari.com/jp/mypage/notification_and_todo_json/">
+            <%= link_to mains_todo_path, class: "pc-header-nav-root" do %>
               <i class="icon-check"></i>
               <span>やることリスト</span>
               <div class="pc-header-nav-count">
                 1
               </div>
-            </a>
+              <% end %>
             <ul class="pc-header-user-box pc-header-todo-box mypage-item-list" data-id="pc-header-user-items">
 
               <li class="mypage-item-not-found bold">現在、やることリストはありません</li>
@@ -1880,7 +1881,18 @@
             </ul>
           </li>
         </ul>
+        <% else %>
+           <ul class="pc-header-login-nav">
+              <li>
+                <%= link_to 'ログイン', new_user_session_path, class: "sp-header-btn btn-red-a" %>
+              </li>
+              <li>
+                <%= link_to '新規会員登録', new_user_registration_path, class: "sp-header-btn header-signup" %>
+              </li>
+            </ul>
+        <% end %>
       </div>
     </div>
   </div>
 </header>
+</div>
