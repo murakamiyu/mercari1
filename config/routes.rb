@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
 
   root 'items#index'
   resources :users                     #tweets_controllerに対してのresourcesメソッド
   resources :addresses, only: [:new, :create, :edit, :update]
-
   resources :items, only: [:index, :show, :new, :create, :edit, :update]
 
   namespace :purchase_pre do
@@ -53,7 +53,6 @@ Rails.application.routes.draw do
 
 
   resources :credits, only: [:index, :new, :create, :destroy]
-  
-  resources :users, only: [:edit, :update]
 
+  resources :users, only: [:edit, :update]
 end
