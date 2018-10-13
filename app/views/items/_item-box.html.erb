@@ -1,5 +1,5 @@
 <section class="items-box">
-  <%= link_to "/items/#{item.id}", method: :get do %>
+  <%= link_to item_path(item.id) do %>
   <!-- <a href="items/show/"> -->
     <figure class="items-box-photo">
       <% if item.buyer_id && item.seller_id? %>

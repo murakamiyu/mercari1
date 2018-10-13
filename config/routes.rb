@@ -9,9 +9,6 @@ Rails.application.routes.draw do
     resources :items, only: [:show,:update]
   end
 
-  # get 'items/:id/purchase_pre_confirmation/', to: 'items#purchase_pre_confirmation'
-  get 'items/:id/purchase_confirmation/', to: 'items#purchase_pconfirmation'
-
   get 'mains/profile', to: 'mains#profile'
   get 'mains/deliver_adress', to: 'mains#deliver_adress'
   get 'mains/card', to: 'mains#card'

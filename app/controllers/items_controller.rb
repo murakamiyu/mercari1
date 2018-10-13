@@ -2,13 +2,13 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :purchase_pre_confirmation]
 
   def index
-    @item1s = Item.limit(4).order("created_at DESC")
-    @item2s = Item.limit(4)
-    @item3s = Item.limit(4)
-    @item4s = Item.limit(4)
-    @item5s = Item.limit(4)
-    @item6s = Item.limit(4)
-    @item7s = Item.limit(4)
+    @ladies = Item.limit(4).order("created_at DESC")
+    @mens = Item.limit(4)
+    @cosmes = Item.limit(4)
+    @babies = Item.limit(4)
+    @chanels = Item.limit(4)
+    @supremes = Item.limit(4)
+    @nikes = Item.limit(4)
   end
 
   def show
@@ -22,9 +22,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    redirect_to root_path
-
+    if @item.save
+      redirect_to :root
+    else
+      redirect_to ({ action: new }), alert: '商品の登録はできませんでした。'
+    end
   end
 
   def update
