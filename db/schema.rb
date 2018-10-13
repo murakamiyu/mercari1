@@ -10,8 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20181010212816) do
+ActiveRecord::Schema.define(version: 20181011085110) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "area"
+    t.string   "postal_code"
+    t.string   "city"
+    t.string   "address1"
+    t.string   "address2"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "area",       limit: 65535
@@ -33,18 +44,6 @@ ActiveRecord::Schema.define(version: 20181010212816) do
     t.datetime "updated_at",                         null: false
   end
 
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image"
-    t.integer  "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
-=======
-
-
-ActiveRecord::Schema.define(version: 20181011062544) do
-
-
   create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",       null: false
     t.string   "num",           null: false
@@ -54,8 +53,14 @@ ActiveRecord::Schema.define(version: 20181011062544) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
+  end
 
->>>>>>> master
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "image"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -86,13 +91,6 @@ ActiveRecord::Schema.define(version: 20181011062544) do
     t.datetime "updated_at",               null: false
   end
 
-<<<<<<< HEAD
-  add_foreign_key "images", "items"
-  add_foreign_key "items", "areas"
-  add_foreign_key "items", "brands"
-  add_foreign_key "items", "categories"
-  add_foreign_key "items", "sizes"
-=======
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                                          null: false
     t.string   "email",                                default: "", null: false
@@ -107,7 +105,11 @@ ActiveRecord::Schema.define(version: 20181011062544) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "credits", "users"
-
->>>>>>> master
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "areas"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "sizes"
 end
