@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
   def index
+    # 以下、Topページでの商品出品を仮置き
+    # TdDo：(１)変数名の意味がわかるように修正（２）配列を作成し繰り返し処理で対応
     @item1s = Item.all
     @item2s = Item.limit(4)
     @item3s = Item.limit(4)
@@ -12,7 +14,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    4.times { @item.images.build }
+    4.times { @item.images.build }  # 1つのitemにつき最大4つの画像を持たせる
   end
 
   def create
