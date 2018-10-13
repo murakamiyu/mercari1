@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
-  resources :items, only: [:index,:show,:new,:create,:edit,:update] do
-    member do
-      get :purchase_pre_confirmation
-    end
+  resources :items, only: [:index,:show,:new,:create,:edit,:update]
+
+  namespace :purchase_pre do
+    resources :items, only: [:show,:update]
   end
 
   # get 'items/:id/purchase_pre_confirmation/', to: 'items#purchase_pre_confirmation'

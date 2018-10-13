@@ -24,18 +24,12 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.save
     redirect_to root_path
+
   end
 
   def update
     item = Item.find(params[:id])
     item.update(item_params) 
-    if item.buyer_id?
-      @item = Item.find(params[:id])
-      render 'purchase_confirmation' 
-    end
-  end
-
-  def purchase_pre_confirmation
   end
 
   private

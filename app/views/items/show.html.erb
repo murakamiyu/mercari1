@@ -126,7 +126,7 @@
         <% if @item.buyer_id && @item.seller_id? %>
             <div class="item-buy-btn disabled f18-24">売り切れました</div>
         <% else %>
-          <%= link_to "/items/#{@item.id}/purchase_pre_confirmation/" do %>
+          <%= link_to "/purchase_pre/items/#{@item.id}" do %>
             <div class="item-buy-btn btn-red f18-24">購入画面に進む</div>
           <% end %>
         <% end %>
