@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'items#index'
+  resources :users                     #tweets_controllerに対してのresourcesメソッド
+  resources :addresses, only: [:new, :create, :edit, :update]
 
   resources :items, only: [:index,:show,:new,:create,:edit,:update]
 
   namespace :purchase_pre do
     resources :items, only: [:show,:update]
   end
-
+  
   get 'mains/profile', to: 'mains#profile'
   get 'mains/deliver_adress', to: 'mains#deliver_adress'
   get 'mains/card', to: 'mains#card'
@@ -48,4 +50,10 @@ Rails.application.routes.draw do
   get 'tests/credit_new', to: 'tests#credit_new'
   get 'tests/account_completion', to: 'tests#account_completion'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
+
+
+  resources :credits, only: [:index, :new, :create, :destroy]
+  
+  resources :users, only: [:edit, :update]
+
 end
