@@ -2,13 +2,13 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :purchase_pre_confirmation]
 
   def index
-    @ladies = Item.limit(4).order("created_at DESC")
-    @mens = Item.limit(4)
-    @cosmes = Item.limit(4)
-    @babies = Item.limit(4)
-    @chanels = Item.limit(4)
-    @supremes = Item.limit(4)
-    @nikes = Item.limit(4)
+    @ladies = Item.order("created_at DESC").limit(4)
+    @mens = Item.order("created_at DESC").limit(4)
+    @cosmes = Item.order("created_at DESC").limit(4)
+    @babies = Item.order("created_at DESC").limit(4)
+    @chanels = Item.order("created_at DESC").limit(4)
+    @supremes = Item.order("created_at DESC").limit(4)
+    @nikes = Item.order("created_at DESC").limit(4)
   end
 
   def show
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to :root
     else
-      redirect_to ({ action: new }), alert: '商品の登録はできませんでした。'
+      redirect_to :new_item , alert: '商品の登録はできませんでした。'
     end
   end
 

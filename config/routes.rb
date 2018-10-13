@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   resources :users                     #tweets_controllerに対してのresourcesメソッド
   resources :addresses, only: [:new, :create, :edit, :update]
 
-  resources :items, only: [:index,:show,:new,:create,:edit,:update]
+  resources :items, only: [:index, :show, :new, :create, :edit, :update]
 
   namespace :purchase_pre do
     resources :items, only: [:show,:update]
   end
-  
+
   get 'mains/profile', to: 'mains#profile'
   get 'mains/deliver_adress', to: 'mains#deliver_adress'
   get 'mains/card', to: 'mains#card'
