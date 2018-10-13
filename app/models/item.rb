@@ -2,7 +2,9 @@ class Item < ApplicationRecord
 
   MAX_POST_IMAGES_LENGTH = 4
 
-  has_many :images
+  has_many :images, dependent: :destroy
+  belongs_to :seller, class_name: "User"
+  belongs_to :buyer, class_name: "User", optional: true
   belongs_to :category
   belongs_to :size
   belongs_to :brand, optional: true
@@ -21,4 +23,8 @@ class Item < ApplicationRecord
     images.image
   end
 
+  validates :name, 
+            :text,
+            :price, 
+            presence: true
 end

@@ -1,4 +1,19 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :purchase_pre_confirmation]
+
+  def index
+    @ladies = Item.order("created_at DESC").limit(4)
+    @mens = Item.order("created_at DESC").limit(4)
+    @cosmes = Item.order("created_at DESC").limit(4)
+    @babies = Item.order("created_at DESC").limit(4)
+    @chanels = Item.order("created_at DESC").limit(4)
+    @supremes = Item.order("created_at DESC").limit(4)
+    @nikes = Item.order("created_at DESC").limit(4)
+  end
+
+  def show
+    @images = @item.images
+  end
 
   def index
     # 以下、Topページでの商品出品を仮置き
@@ -31,6 +46,11 @@ class ItemsController < ApplicationController
     @images = @item.images
   end
 
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params) 
+  end
+
 
 
   private
@@ -50,9 +70,14 @@ class ItemsController < ApplicationController
       :brand_id,
       :size_id,
       :area_id,
+      :seller_id,
+      :buyer_id,
       images_attributes: [:id, :image, :item_id, :_destroy]
     )
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
 
