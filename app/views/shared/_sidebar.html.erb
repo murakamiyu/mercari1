@@ -104,9 +104,10 @@
     </li>
   <h3 class="mypage-nav-head">設定</h3>
       <li>
-        <a href="/mains/profile/" class="mypage-nav-list-item ">
-          プロフィール
-      <i class="fas fa-angle-right"></i>
+        <div class="mypage-nav-list-item" >
+            <%= link_to "プロフィール", "/users/#{current_user.id}/edit", class: "link"%>
+            <i class="fas fa-angle-right"></i>
+          </div>
     </a>
     </li>
       <li>
@@ -117,7 +118,7 @@
        <!--  <a href="/addresses/new" class="mypage-nav-list-item "> -->
     </li>
       <li>
-        <a href="/mains/card/" class="mypage-nav-list-item ">
+        <a href="/credits/new" class="mypage-nav-list-item ">
           支払い方法
       <i class="fas fa-angle-right"></i>
     </a>
