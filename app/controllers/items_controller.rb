@@ -2,13 +2,13 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
 
   def index
-    @ladies = Item.order("created_at DESC").limit(4)
-    @mens = Item.order("created_at DESC").limit(4)
-    @cosmes = Item.order("created_at DESC").limit(4)
-    @babies = Item.order("created_at DESC").limit(4)
-    @chanels = Item.order("created_at DESC").limit(4)
-    @supremes = Item.order("created_at DESC").limit(4)
-    @nikes = Item.order("created_at DESC").limit(4)
+    @ladies = Item.where(category_id: 1..140).order("RAND()").limit(4)
+    @mens = Item.where(category_id: 141..260).order("created_at DESC").limit(4)
+    @cosmes = Item.where(category_id: 141..260).order("created_at DESC").limit(4)
+    @babies = Item.where(category_id: 261..387).order("created_at DESC").limit(4)
+    @chanels = Item.where(brand_id: 1).order("created_at DESC").limit(4)
+    @supremes = Item.where(brand_id: 28).limit(4)
+    @nikes = Item.order("RAND()").limit(4)
   end
 
   def show
@@ -27,11 +27,6 @@ class ItemsController < ApplicationController
     else
       redirect_to :new_item , alert: '出品に失敗しました'
     end
-  end
-
-  def show
-    @item = Item.find(params[:id])
-    @images = @item.images
   end
 
   def update

@@ -6,7 +6,7 @@
         <figure>
           <img src="https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png" alt="" width="60" height="60">
         </figure>
-        <h2 class="bold">k-i</h2>
+        <h2 class="bold"><%= current_user.nickname %></h2>
         <div class="mypage-number">
           <div>
             評価
@@ -14,7 +14,7 @@
           </div>
           <div>
             出品数
-            <span class="bold">0</span>
+            <span class="bold"><%= current_user.selling_item_ids.length %></span>
           </div>
         </div>
       </a>

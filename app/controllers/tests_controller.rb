@@ -5,14 +5,6 @@ class TestsController < ApplicationController
   def order_status
   end
 
-  def purchase_pre_confirmation
-    render :layout => false
-  end
-
-  def purchase_confirmation
-    render :layout => false
-  end
-
   def account
     render :layout => nil
   end

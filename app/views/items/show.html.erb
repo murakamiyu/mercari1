@@ -15,9 +15,7 @@
               <% @item.images.first(1).each do |content| %>
                <%= image_tag content.image, class: "owl-lazy active-image" %>
               <% end %>
-              <!-- <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m17702910592_1.jpg?1494669182" alt="mipoさん専用 ナイキ ブレザー ミッド ナイキsb 28センチ" class="owl-lazy active-image"> -->
             </div>
-
             <div class="owl-nav disabled"></div>
             <div class="owl-dots">
               <div class="owl-dot-inner" data-thumbnail-class-name="">
@@ -25,15 +23,6 @@
                  <%= image_tag content.image, class: "owl-lazy" %>
                 <% end %>
               </div>
-              <!-- <div class="owl-dot-inner" data-thumbnail-class-name="">
-                <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m17702910592_2.jpg?1494669182" alt="mipoさん専用 ナイキ ブレザー ミッド ナイキsb 28センチ" class="owl-lazy">
-                </div>
-              <div class="owl-dot-inner"data-thumbnail-class-name="">
-                <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m17702910592_3.jpg?1494669182" alt="mipoさん専用 ナイキ ブレザー ミッド ナイキsb 28センチ" class="owl-lazy">
-              </div>
-              <div class="owl-dot-inner" data-thumbnail-class-name="">
-                <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m17702910592_4.jpg?1494669182" alt="mipoさん専用 ナイキ ブレザー ミッド ナイキsb 28センチ" class="owl-lazy">
-              </div> -->
             </div>
           </div>
 
@@ -44,7 +33,7 @@
               <tr>
                 <th class="table-1-2">出品者</th>
                 <td>
-                  <a href="">ダイコン</a>
+                  <a href=""><%= @item.seller.nickname %></a>
                   <div>
                     <div class="item-user-ratings">
                       <i class="material-icons">sentiment_very_satisfied</i>
@@ -65,16 +54,16 @@
                 <th>カテゴリー</th>
                 <td>
                   <a href="https://www.mercari.com/jp/category/2/">
-                    <div>メンズ</div>
+                    <div><%= @item.category.parent_category %></div>
                   </a>
                   <a href="https://www.mercari.com/jp/category/33/">
                     <div class="item-detail-table-sub-category">
-                    <i class="material-icons">chevron_right</i><span> 靴</span>
+                    <i class="material-icons">chevron_right</i><span><%= @item.category.child_category %></span>
                     </div>
                   </a>
                   <a href="https://www.mercari.com/jp/category/345/">
                     <div class="item-detail-table-sub-sub-category">
-                    <i class="material-icons">chevron_right</i><span> スニーカー</span>
+                    <i class="material-icons">chevron_right</i><span><%= @item.category.grand_child_category %></span>
                     </div>
                   </a>
                 </td>
@@ -91,39 +80,39 @@
               </tr>
               <tr>
                 <th>商品のサイズ</th>
-                <td>28cm</td>
+                <td><%= @item.size.size %></td>
               </tr>
               <tr>
                 <th>商品の状態</th>
-                <td>やや傷や汚れあり</td>
+                <td><%= @item.condition_i18n %></td>
               </tr>
               <tr>
                 <th>配送料の負担</th>
-                <td>送料込み(出品者負担)</td>
+                <td><%= @item.shipping_payer_i18n %></td>
               </tr>
               <tr>
                 <th>配送の方法</th>
-                <td>未定</td>
+                <td><%= @item.shipping_method_i18n %></td>
               </tr>
               <tr>
                 <th>配送元地域</th>
                 <td>
-                  <a href="https://www.mercari.com/jp/area/23/">愛知県</a>
+                  <a href=""><%= @item.area.area %></a>
                 </td>
               </tr>
               <tr>
                 <th>発送日の目安</th>
-                <td>2~3日で発送</td>
+                <td><%= @item.days_to_ship_i18n %></td>
               </tr>
             </table>
           </div>
 
         <div class="item-price-box text-center">
-          <span class="item-price bold">¥ <%= @item.price %></span>
+          <span class="item-price bold">¥ <%= number_with_delimiter(@item.price) %></span>
           <span class="item-tax"> (税込)</span>
           <span class="item-shipping-fee">送料込み</span>
         </div>
-        <% if @item.buyer_id && @item.seller_id? %>
+        <% if @item.buyer_id? && @item.seller_id? %>
             <div class="item-buy-btn disabled f18-24">売り切れました</div>
         <% else %>
           <%= link_to "/purchase_pre/items/#{@item.id}" do %>
@@ -223,34 +212,6 @@
             </div>
             </li>
           </ul>
-          
-          <!-- <aside class="modal" data-modal="delete-comment" data-close="modal">
-            <div class="modal-inner modal-banner">
-              <div class="modal-body">
-                <div class="modal-head bold">確認</div>
-                <div data-comment="body"></div>
-                <br>
-                本当にこのコメントを削除してよろしいですか？
-              </div>
-              <form action="https://www.mercari.com/jp/comment/delete/" method="POST">
-                <div class="clearfix">
-                  <div class="modal-btn modal-btn-cancel" data-close="modal">キャンセル</div>
-                  <button type="submit" class="modal-btn modal-btn-submit">
-                    削除する
-                  </button>
-                </div>
-                <input type="hidden" name="item_id" value="m17702910592">
-                <input type="hidden" name="comment_id" value="">
-                <input type="hidden" name="redirect_url_key" value="item_detail">
-                <input type="hidden" name="__csrf_value" value="62cdce56977b4de039d37f3465758660ec76d9d0d6fd30f557d33f530c64bc311107af8fa3a08fb1fd73a9410ee48d02c692d85a0066f15e2ec6190264aeed43d">
-              </form>
-            </div>
-          </aside> -->
-
-          <!-- 
-
-          -->
-
          </div>
         <div class="message-content">
             <form action="https://www.mercari.com/jp/comment/add/" method="POST" class="message-form">
