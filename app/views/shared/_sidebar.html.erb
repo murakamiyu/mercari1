@@ -104,10 +104,16 @@
     </li>
   <h3 class="mypage-nav-head">設定</h3>
       <li>
-        <a href="/mains/profile/" class="mypage-nav-list-item ">
+<!--         <a href="/mains/profile/" class="mypage-nav-list-item ">
           プロフィール
       <i class="fas fa-angle-right"></i>
-    </a>
+    </a> -->
+
+        <%= link_to "/users/#{current_user.id}/edit", class: "mypage-nav-list-item" do %>
+          プロフィール
+          <i class="fas fa-angle-right"></i>
+        <% end %>
+
     </li>
       <li>
           <div class="mypage-nav-list-item" >
@@ -117,11 +123,11 @@
        <!--  <a href="/addresses/new" class="mypage-nav-list-item "> -->
     </li>
       <li>
-        <a href="/mains/card/" class="mypage-nav-list-item ">
+        <%= link_to new_payjp_path, class: "mypage-nav-list-item" do %>
           支払い方法
-      <i class="fas fa-angle-right"></i>
-    </a>
-    </li>
+          <i class="fas fa-angle-right"></i>
+        <% end %>
+      </li>
       <li>
         <a href="/mains/email_password/" class="mypage-nav-list-item ">
           メール/パスワード

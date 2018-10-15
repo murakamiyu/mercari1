@@ -55,4 +55,6 @@ Rails.application.routes.draw do
   resources :credits, only: [:index, :new, :create, :destroy]
 
   resources :users, only: [:edit, :update]
+
+  resources :payjps, only: [:new, :create]
 end
