@@ -48,7 +48,7 @@
     <h2>ピックアップブランド</h2>
     <section class="items-box-container clearfix">
       <h3 class="text-center">
-        <%= link_to 'アー ヴェ ヴェ'%>
+        <%= link_to "/brands/1" do %>アー ヴェ ヴェ<% end%>
       </h3>
       <div class="items-box-content clearfix">
        <% @chanels.each do |item| %>
@@ -58,7 +58,7 @@
     </section>
     <section class="items-box-container clearfix">
       <h3 class="text-center">
-        <a href="#">アーバンリサーチ</a>
+        <%= link_to "/brands/28" do %>アーバンリサーチ<%end %>
       </h3>
       <div class="items-box-content clearfix">
         <% @supremes.each do |item| %>

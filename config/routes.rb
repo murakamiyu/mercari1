@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :addresses, only: [:new, :create, :edit, :update]
   resources :credits, only: [:index, :new, :create, :destroy]
   resources :items, only: [:index, :show, :new, :create, :edit, :update]
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:show]
+  resources :brands, only: [:show]
   namespace :purchase_pre do
     resources :items, only: [:show,:update]
   end
