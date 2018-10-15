@@ -25,15 +25,17 @@
           <section class="buy-content buy-item">
             <div class="buy-content-inner">
               <h3 class="buy-item-image">
-                <img src="https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m82430140965_1.jpg?1536235609" class="lazyload" alt="">
+                <% @item.images.first(1).each do |content| %>
+                  <%= image_tag content.image, class: "lazyload" %>
+                <% end %>
               </h3>
-              <p class="buy-item-name bold">確かな力が身につくJavaScript「超」入門</p>
+              <p class="buy-item-name bold"><%= @item.name %></p>
             </div>
           </section>
           <section class="buy-content buy-item">
             <div class="buy-content-inner">
               <p class="buy-price-ja bold">
-                ¥ 3,000
+                ¥ <%= @item.price %>
                 <span class="item-shipping-fee f14 bold">送料込み</span>
               </p>
             </div>

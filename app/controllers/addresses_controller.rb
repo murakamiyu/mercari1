@@ -1,5 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:edit, :update]
+  
   def new
     # @user = current_user
     # @address = current_user.address

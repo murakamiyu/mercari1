@@ -2,9 +2,6 @@ class TestsController < ApplicationController
   def index
   end
 
-  def item_detail
-  end
-
   def order_status
   end
 
@@ -36,8 +33,5 @@ class TestsController < ApplicationController
     render :layout => nil
   end
 
-  def putting_item
-    render :layout => nil
-  end
 
 end

@@ -16,8 +16,6 @@ default: &default
   username: root
   password:
   socket: /tmp/mysql.sock
-# /tmp/mysql.sock
-
 development:
   <<: *default
   database: mercari1_development
