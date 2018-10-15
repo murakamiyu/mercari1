@@ -4,38 +4,42 @@
     <section class="mypage-tab-container">
       <h2 class="mypage-tab-head">評価一覧</h2>
       <ul class="review-history-tabs">
-        <li class="active">
+        <li class="">
           <h3>
-            <a href="#mypage-tab-transaction-now" data-toggle="tab">
-              すべて
-            </a>
+            <%= link_to review_history_user_path(current_user) do %>
+              <div>
+                <i class="icon-good">
+                </i>
+                 すべて
+              </div>
+            <% end %>
           </h3>
         </li>
         <li class="">
           <h3>
-            <a href="/mypage/review/history/great">
+            <%= link_to review_history_great_user_path(current_user) do %>
               <div>
                 <i class="icon-good">
                 </i>
                  良い
               </div>
-            </a>
+            <% end %>
           </h3>
         </li>
         <li class="">
           <h3>
-            <a href="/mypage/review/history/good">
+            <%= link_to review_history_good_user_path(current_user) do %>
               <div>
-                <i class="icon-normal">
+                <i class="icon-good">
                 </i>
                  普通
               </div>
-            </a>
+            <% end %>
           </h3>
         </li>
-        <li class="">
+        <li class="active">
           <h3>
-            <a href="/mypage/review/history/poor">
+            <a href="#mypage-tab-transaction-old" data-toggle="tab">
               <div>
                 <i class="icon-bad">
                 </i>
@@ -55,13 +59,13 @@
     </section>
     <ul class="mypage-history pager">
       <li class="pager-prev pager-cell">
-        <a href="/mypage/review/history/">
+        <a href="/mypage/review/history/poor/">
           <i class="icon-arrow-left">
           </i>
         </a>
       </li>
       <li class="pager-next pager-cell">
-        <a href="/mypage/review/history/">
+        <a href="/mypage/review/history/poor/">
           <i class="icon-arrow-right">
           </i>
         </a>

@@ -1,41 +1,16 @@
 <%= render "shared/header"%>
 <main class="l-container clearfix">
   <div class="l-content">
-    <section class="mypage-user-icon">
-      <a href="https://www.mercari.com/jp/u/636101707/">
-        <figure>
-          <img src="https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png" alt="" width="60" height="60">
-        </figure>
-        <h2 class="bold"><%= current_user.nickname %></h2>
-        <div class="mypage-number">
-          <div>
-            評価
-            <span class="bold">0</span>
-          </div>
-          <div>
-            出品数
-            <span class="bold">0</span>
-          </div>
-        </div>
-      </a>
-    </section>
-    <section class="mypage-tab-container-notification-todo" id="mypage_tab_container_notification_todo">
+    <section class="mypage-tab-container-notification-todo">
       <ul class="mypage-tabs">
         <li class="active">
           <h3>
-            <a href="#mypage-tab-notification" data-toggle="tab">
-              お知らせ
-              <span class="mypage-nav-number hidden-large">
-                10
-              </span>
-            </a>
+            <%= link_to "お知らせ", notification_user_path(current_user) %>
           </h3>
         </li>
         <li class="">
           <h3>
-            <a href="#mypage-tab-todo" data-toggle="tab">
-              やることリスト
-            </a>
+            <%= link_to "やることリスト", todo_user_path(current_user) %>
           </h3>
         </li>
       </ul>
@@ -116,9 +91,6 @@
               <i class="icon-arrow-right"></i>
             </a>
           </li>
-          <li class="mypage-go-list">
-            <a href="">一覧を見る</a>
-          </li>
         </ul>
         <ul id="mypage-tab-todo" class="mypage-item-list tab-pane">
           <li class="mypage-item-not-found bold">現在、やることリストはありません</li>
@@ -149,37 +121,9 @@
         <i class="icon-close" data-close="modal"></i>
       </div>
     </aside>
-    <section class="mypage-tab-container" id="mypage_tab_container">
-      <h2 class="mypage-tab-head">購入した商品</h2>
-      <ul class="mypage-tabs">
-        <li class="active">
-          <h3>
-            <a href="#mypage-tab-transaction-now" data-toggle="tab">
-                取引中
-            </a>
-          </h3>
-        </li>
-        <li class="">
-          <h3>
-            <a href="#mypage-tab-transaction-old" data-toggle="tab">
-                過去の取引
-            </a>
-          </h3>
-        </li>
-      </ul>
-      <div class="tab-content">
-        <ul id="mypage-tab-transaction-now" class="mypage-item-list tab-pane active">
-          <li class="mypage-item-not-found bold">取引中の商品がありません</li>
-        </ul>
-        <ul id="mypage-tab-transaction-old" class="mypage-item-list tab-pane">
-          <li class="mypage-item-not-found bold">過去に取引した商品がありません</li>
-        </ul>
-      </div>
-    </section>
   </div>
   <%= render "shared/sidebar" %>
 </main>
-
 
 <%= render "shared/seller-button" %>
 <%= render "shared/footer" %>

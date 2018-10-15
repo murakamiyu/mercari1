@@ -3,7 +3,23 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'items#index'
-  resources :users                     #tweets_controllerに対してのresourcesメソッド
+  resources :users do
+    member do
+      get 'notification'
+      get 'todo'
+      get 'like_history'
+      get 'listings_listing'
+      get 'listings_in_progress'
+      get 'listings_completed'
+      get 'purchase'
+      get 'purchased'
+      get 'news'
+      get 'review_history'
+      get 'review_history_great'
+      get 'review_history_good'
+      get 'review_history_poor'
+    end
+  end
   resources :addresses, only: [:new, :create, :edit, :update]
   resources :items, only: [:index, :show, :new, :create, :edit, :update]
 

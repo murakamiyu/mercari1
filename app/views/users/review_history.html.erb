@@ -13,35 +13,35 @@
         </li>
         <li class="">
           <h3>
-            <a href="/mypage/review/history/great">
+            <%= link_to review_history_great_user_path(current_user) do %>
               <div>
                 <i class="icon-good">
                 </i>
                  良い
               </div>
-            </a>
+            <% end %>
           </h3>
         </li>
         <li class="">
           <h3>
-            <a href="/mypage/review/history/good">
+            <%= link_to review_history_good_user_path(current_user) do %>
               <div>
-                <i class="icon-normal">
+                <i class="icon-good">
                 </i>
                  普通
               </div>
-            </a>
+            <% end %>
           </h3>
         </li>
         <li class="">
           <h3>
-            <a href="/mypage/review/history/poor">
+            <%= link_to review_history_poor_user_path(current_user) do %>
               <div>
-                <i class="icon-bad">
+                <i class="icon-good">
                 </i>
                  悪い
               </div>
-            </a>
+            <% end %>
           </h3>
         </li>
       </ul>
