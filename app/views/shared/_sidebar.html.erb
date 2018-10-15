@@ -108,16 +108,10 @@
     </li>
   <h3 class="mypage-nav-head">設定</h3>
       <li>
-<!--         <a href="/mains/profile/" class="mypage-nav-list-item ">
-          プロフィール
-      <i class="fas fa-angle-right"></i>
-    </a> -->
-
         <%= link_to "/users/#{current_user.id}/edit", class: "mypage-nav-list-item" do %>
           プロフィール
           <i class="fas fa-angle-right"></i>
         <% end %>
-
     </li>
       <li>
           <div class="mypage-nav-list-item" >

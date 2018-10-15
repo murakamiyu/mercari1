@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   end
 
   get 'mains/profile', to: 'mains#profile'
-  get 'mains/deliver_adress', to: 'mains#deliver_adress'
   get 'mains/card', to: 'mains#card'
   get 'mains/card_new', to: 'mains#creditnew'
   get 'mains/card_after', to: 'mains#creditafter'
@@ -62,7 +61,6 @@ Rails.application.routes.draw do
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
   get 'tests/sms_confirmation', to: 'tests#sms_confirmation'
-  get 'tests/adress_new', to: 'tests#adress_new'
   get 'tests/credit_new', to: 'tests#credit_new'
   get 'tests/account_completion', to: 'tests#account_completion'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'

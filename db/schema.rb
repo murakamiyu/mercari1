@@ -9,40 +9,21 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20181014073103) do
+ActiveRecord::Schema.define(version: 20181011085110) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "area"
-    t.string   "postal_code"
-    t.string   "city"
-    t.string   "address1"
+    t.string   "area",        null: false
+    t.string   "postal_code", null: false
+    t.string   "city",        null: false
+    t.string   "address1",    null: false
+
     t.string   "address2"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
-
-  create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "area",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "brand",      limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "parent_category",      limit: 65535
-    t.text     "child_category",       limit: 65535
-    t.text     "grand_child_category", limit: 65535
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
+<<<<<
 
   create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",       null: false
@@ -117,6 +98,7 @@ ActiveRecord::Schema.define(version: 20181014073103) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "credits", "users"
+
   add_foreign_key "customers", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "areas"

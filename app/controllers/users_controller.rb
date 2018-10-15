@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
+    redirect_to mains_top_path
   end
 
   private
