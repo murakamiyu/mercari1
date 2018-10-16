@@ -1,4 +1,5 @@
 $(function() {
+  $(document).on('turbolinks:load', function() {
   $(".mypage-nav-list-item").on("mouseover", function() {
     $(this).css('background', '#EEEEEE');
     var faAngleRight = $(this).find(".fa-angle-right");
@@ -16,4 +17,5 @@ $(function() {
     'right': '16px',
   }, 0, 'easing');
   });
+});
 });

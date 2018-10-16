@@ -13,9 +13,10 @@
             <%= link_to '新規会員登録', new_user_registration_path %>
           </div>
           <div class="login-form-inner">
+
             <button id="facebook-login" class="btn-default btn-sns btn-sns-facebook">
               <i class="icon-facebook"></i>
-              Facebookでログイン
+              <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class: "post" %>
             </button>
             <button id="google-login" class="btn-default btn-sns btn-sns-google">
               <i class="icon-google-plus"></i>
