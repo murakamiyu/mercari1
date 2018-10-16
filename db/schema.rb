@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181011085110) do
+ActiveRecord::Schema.define(version: 20181014073103) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "area"
-    t.string   "postal_code"
-    t.string   "city"
-    t.string   "address1"
+    t.string   "area",        null: false
+    t.string   "postal_code", null: false
+    t.string   "city",        null: false
+    t.string   "address1",    null: false
     t.string   "address2"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 20181011085110) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
+  end
+
+  create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                  null: false
+    t.text     "token",      limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["user_id"], name: "index_customers_on_user_id", using: :btree
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -109,6 +117,7 @@ ActiveRecord::Schema.define(version: 20181011085110) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "credits", "users"
+  add_foreign_key "customers", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "areas"
   add_foreign_key "items", "brands"

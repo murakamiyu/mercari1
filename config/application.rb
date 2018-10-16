@@ -10,7 +10,6 @@ module Mercari1
   class Application < Rails::Application
     config.active_record.default_timezone = :local
     config.time_zone = 'Tokyo'
-
     config.generators do |g|
       g.test_framework false
     end
@@ -24,4 +23,3 @@ module Mercari1
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-
