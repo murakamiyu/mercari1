@@ -1747,7 +1747,7 @@
         <% if user_signed_in? %>
         <ul class="pc-header-user-nav">
           <li>
-            <%= link_to mains_top_path, class: "sp-header-user-icon pc-header-nav-root" do %>
+            <%= link_to user_path(current_user), class: "sp-header-user-icon pc-header-nav-root" do %>
               <figure>
                 <div>
                   <img src="https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png" alt="" width="32">

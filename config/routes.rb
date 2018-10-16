@@ -29,8 +29,29 @@ Rails.application.routes.draw do
   namespace :purchase_pre do
     resources :items, only: [:show,:update]
   end
+  
   namespace :order_status do
     resources :items, only: [:index,:show]
+  end
+  
+  namespace :listings do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :in_progress do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :completed do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :purchase do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :purchased do
+    resources :items, only: [:index, :show]
   end
 
   get 'mains/profile', to: 'mains#profile'
@@ -61,4 +82,5 @@ Rails.application.routes.draw do
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
+
 end
