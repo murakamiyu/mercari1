@@ -3,12 +3,15 @@ class AddressesController < ApplicationController
 
   def new
     @address = Address.new
+
     @user = current_user
     @address = Address.where(user_id: @user.id).first_or_initialize
   end
 
   def create
+
       @address = Address.new(address_params)
+
     if @address.save
       redirect_to mains_top_path
     else

@@ -26,13 +26,7 @@
               <p class="buy-item-name bold"><%= @item.name %></p>
               <%= form_for @item, :url => {:action => 'update'} do |f| %>
                 <%= f.hidden_field :buyer_id, value: current_user.id %>
-              <!-- <form
-                  action=""
-                  method="POST"
-                  class="buy-form"
-                  novalidate="novalidate">
-                <p class="buy-price-ja bold"> -->
-                  ¥ <%= @item.price %>
+                  ¥ <%= number_with_delimiter(@item.price) %>
                   <span class="item-shipping-fee f14 bold">送料込み</span>
                 </p>
                 <ul class="buy-accordion not-have">
@@ -50,10 +44,7 @@
                     </div>
                   </li>
                 </ul>
-                
-                <!-- <a href="/items/#{@item.id}" class="btn-default btn-red bold">購入する</a>  -->
                 <button type="submit" class="btn-default btn-red bold">購入する</button>
-              <!-- </form> -->
               <% end %>
             </div>
           </section>
@@ -61,10 +52,10 @@
             <div class="buy-content-inner">
               <h3>配送先 </h3>
               <address class="buy-user-info-text">
-                〒xxx-00xx
+                〒<%= current_user.address.postal_code %>
                 <br>
-                xxx xx市
-                xxxx1-22-56
+                <%= current_user.address.area %> <%= current_user.address.city %>
+                <%= current_user.address.address1 %> <%= current_user.address.address2 %>
                 <br>
                 xx xx
               </address>
@@ -80,7 +71,7 @@
             <div class="buy-content-inner">
               <h3>支払い方法</h3>
               <p class="buy-user-info-text">
-                ************xxxx
+                ************3022
                 <br>
                 xx / xx
                 <figure>

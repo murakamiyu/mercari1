@@ -5,6 +5,16 @@
       <h2 class="l-chapter-head">住所変更</h2>
         <main class="single-main">
   <%= form_for @address do |f| %>
+  <% if @address.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@address.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
         <div class="l-single-content">
             <div class="form-group">
               <%= f.label :area, "都道府県" %>

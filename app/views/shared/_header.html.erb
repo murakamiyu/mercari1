@@ -3,9 +3,9 @@
   <div class="pc-header-inner">
     <div class="clearfix">
       <h1 class="l-left">
-        <a href="/tests/account/">
+        <%= link_to root_path do %>
           <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2682216493" alt="mercari" width="134" height="36">
-        </a>
+        <% end %>
       </h1>
 
       <form action="https://www.mercari.com/jp/search/" class="pc-header-form l-right">
@@ -28,7 +28,8 @@
   <!--              大カテゴリ（親要素）：レディース    -->
               <li class="pc-header-nav-parent">
                 <h3>
-                  <a href="#" class>レディース</a>
+                  <%= link_to "/categories/1" do %>
+                  レディース<% end %>
                 </h3>
 
   <!--              中カテゴリ（子要素）：トップス    -->
@@ -1746,7 +1747,7 @@
         <% if user_signed_in? %>
         <ul class="pc-header-user-nav">
           <li>
-            <%= link_to mains_top_path, class: "sp-header-user-icon pc-header-nav-root" do %>
+            <%= link_to user_path(current_user), class: "sp-header-user-icon pc-header-nav-root" do %>
               <figure>
                 <div>
                   <img src="https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png" alt="" width="32">
@@ -1761,11 +1762,11 @@
                   <div>
                     <img src="https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage.png" alt="" width="60">
                   </div>
-                  <figcaption>布施明</figcaption>
+                  <figcaption><%= current_user.nickname %></figcaption>
                 </figure>
                 <ul class="pc-header-mypage-review-listing">
                   <li><a href="#">評価: 2</a></li>
-                  <li><a href="">出品数: 2</a></li>
+                  <li><a href="">出品数: <%= current_user.selling_item_ids.length %></a></li>
                 </ul>
                 <ul class="pc-header-mypage-sales-point">
                   <li>
