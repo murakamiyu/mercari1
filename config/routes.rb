@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
   root 'items#index'
   resources :users do
     member do
@@ -20,15 +19,42 @@ Rails.application.routes.draw do
       get 'review_history_poor'
     end
   end
+  resources :payjps, only: [:new, :create]
   resources :addresses, only: [:new, :create, :edit, :update]
+  resources :credits, only: [:index, :new, :create, :destroy]
   resources :items, only: [:index, :show, :new, :create, :edit, :update]
-
+  resources :categories, only: [:show]
+  resources :brands, only: [:show]
+  
   namespace :purchase_pre do
     resources :items, only: [:show,:update]
   end
+  
+  namespace :order_status do
+    resources :items, only: [:index,:show]
+  end
+  
+  namespace :listings do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :in_progress do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :completed do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :purchase do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :purchased do
+    resources :items, only: [:index, :show]
+  end
 
   get 'mains/profile', to: 'mains#profile'
-  get 'mains/deliver_adress', to: 'mains#deliver_adress'
   get 'mains/card', to: 'mains#card'
   get 'mains/card_new', to: 'mains#creditnew'
   get 'mains/card_after', to: 'mains#creditafter'
@@ -49,48 +75,12 @@ Rails.application.routes.draw do
   get 'mains/top', to: 'mains#mypage'
   get 'mains/notification', to: 'mains#mypage_notification'
   get 'mains/todo', to: 'mains#mypage_todo'
-  get 'mains/like/history', to: 'mains#mypage_like_history'
-  get 'mains/listings/listing', to: 'mains#mypage_listings_listing'
-  get 'mains/listings/in_progress', to: 'mains#mypage_listings_in_progress'
-  get 'mains/listings/completed', to: 'mains#mypage_listings_completed'
   get 'mains/purchase', to: 'mains#mypage_purchase'
   get 'mains/purchased', to: 'mains#mypage_purchased'
   get 'mains/news', to: 'mains#mypage_news'
-  get 'mains/review/history', to: 'mains#mypage_review_history'
-
-  get 'tests/order_status', to: 'tests#order_status'
+  
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
-  get 'tests/sms_confirmation', to: 'tests#sms_confirmation'
-  get 'tests/adress_new', to: 'tests#adress_new'
-  get 'tests/credit_new', to: 'tests#credit_new'
-  get 'tests/account_completion', to: 'tests#account_completion'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
-
-  resources :credits, only: [:index, :new, :create, :destroy]
-
-  resources :users, only: [:edit, :update]
-
-  resources :payjps, only: [:new, :create]
-
-  namespace :listings do
-    resources :items, only: [:index, :show]
-  end
-
-  namespace :in_progress do
-    resources :items, only: [:index, :show]
-  end
-
-  namespace :completed do
-    resources :items, only: [:index, :show]
-  end
-
-  namespace :purchase do
-    resources :items, only: [:index, :show]
-  end
-
-  namespace :purchased do
-    resources :items, only: [:index, :show]
-  end
 
 end
