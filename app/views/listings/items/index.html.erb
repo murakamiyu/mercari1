@@ -13,33 +13,19 @@
         </li>
         <li class="">
           <h3>
-            <%= link_to "取引中", listings_in_progress_user_path(current_user) %>
+            <%= link_to "取引中", in_progress_items_path %>
           </h3>
         </li>
         <li class="">
           <h3>
-            <%= link_to "売却済み", listings_completed_user_path(current_user) %>
+            <%= link_to "売却済み", completed_items_path %>
           </h3>
         </li>
       </ul>
       <div class="tab-content">
         <ul id="mypage-tab-transaction-now" class="mypage-item-list tab-pane active">
           <% if @items.presence %>
-            <% @items.each do |item| %>
-              <li>
-                <%= link_to "/items/#{item.id}", class: "mypage-item-link" do %>
-                  <figure>
-                    <%= image_tag item.images.image, class: "is-higher-height lazyloaded" %>
-                  </figure>
-                  <div class="mypage-item-body">
-                    <div class="mypage-item-text">
-                      <%= item.name %>
-                    </div>
-                  </div>
-                  <i class="icon-arrow-right"></i>
-                <% end %>
-              </li>
-            <% end %>
+            <%= render partial: "item", collection: @items %>
           <% else %>
             <li class="mypage-item-not-found bold">出品中の商品がありません</li>
           <% end %>

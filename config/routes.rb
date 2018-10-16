@@ -67,10 +67,30 @@ Rails.application.routes.draw do
   get 'tests/account_completion', to: 'tests#account_completion'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
 
-
   resources :credits, only: [:index, :new, :create, :destroy]
 
   resources :users, only: [:edit, :update]
 
   resources :payjps, only: [:new, :create]
+
+  namespace :listings do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :in_progress do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :completed do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :purchase do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :purchased do
+    resources :items, only: [:index, :show]
+  end
+
 end

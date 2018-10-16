@@ -38,31 +38,31 @@
         <% end %>
       </li>
       <li>
-        <%= link_to listings_listing_user_path(current_user), class: "mypage-nav-list-item" do %>
+        <%= link_to listings_items_path, class: "mypage-nav-list-item" do %>
           出品した商品-出品中
           <i class="fas fa-angle-right"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to listings_in_progress_user_path(current_user), class: "mypage-nav-list-item" do %>
+        <%= link_to in_progress_items_path, class: "mypage-nav-list-item" do %>
           出品した商品-取引中
           <i class="fas fa-angle-right"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to listings_completed_user_path(current_user), class: "mypage-nav-list-item" do %>
+        <%= link_to completed_items_path, class: "mypage-nav-list-item" do %>
           出品した商品-売却済み
           <i class="fas fa-angle-right"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to purchase_user_path(current_user), class: "mypage-nav-list-item" do %>
+        <%= link_to purchase_items_path, class: "mypage-nav-list-item" do %>
           購入した商品-取引中
           <i class="fas fa-angle-right"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to purchased_user_path(current_user), class: "mypage-nav-list-item" do %>
+        <%= link_to purchased_items_path, class: "mypage-nav-list-item" do %>
           購入した商品-過去の取引
           <i class="fas fa-angle-right"></i>
         <% end %>
