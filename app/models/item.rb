@@ -19,12 +19,16 @@ class Item < ApplicationRecord
 
   validates :images, length: {maximum: MAX_POST_IMAGES_LENGTH}
 
-  def set_main_image
-    images.image
-  end
-
   validates :name, 
             :text,
             :price, 
             presence: true
+
+  def benefit_from_selling
+    (price - 380) * 0.9 
+  end
+
+  def selling_fee
+    (price - 380) * 0.1
+  end
 end
