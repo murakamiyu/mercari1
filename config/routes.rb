@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root 'items#index'
   resources :users do
@@ -58,14 +58,14 @@ Rails.application.routes.draw do
   get 'mains/news', to: 'mains#mypage_news'
   get 'mains/review/history', to: 'mains#mypage_review_history'
 
-  get 'tests/order_status', to: 'tests#order_status'
-  get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
+  # get 'tests/order_status', to: 'tests#order_status'
+  # get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
-  get 'tests/sms_confirmation', to: 'tests#sms_confirmation'
-  get 'tests/adress_new', to: 'tests#adress_new'
-  get 'tests/credit_new', to: 'tests#credit_new'
-  get 'tests/account_completion', to: 'tests#account_completion'
-  get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
+  # get 'tests/sms_confirmation', to: 'tests#sms_confirmation'
+  # get 'tests/adress_new', to: 'tests#adress_new'
+  # get 'tests/credit_new', to: 'tests#credit_new'
+  # get 'tests/account_completion', to: 'tests#account_completion'
+  # get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
 
 
   resources :credits, only: [:index, :new, :create, :destroy]

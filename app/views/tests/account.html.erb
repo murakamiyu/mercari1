@@ -27,15 +27,15 @@
 
               <button id="facebook-login" class="btn-default btn-sns btn-sns-facebook">
                 <i class="icon-facebook"></i>
-                Facebookで登録
+                <%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, class: "post" %>
               </button>
               <button id="google-login" class="btn-default btn-sns btn-sns-google">
                 <i class="icon-google-plus"></i>
                 Googleで登録
               </button>
-              <%= link_to "/tests/sms_confirmation/", class: "btn-default btn-mail" do %>
+              <%= link_to "/users/sign_up", class: "btn-default btn-mail" do %>
                 <i class="icon-mail"></i>
-                メールアドレスで登録
+                メールアドレスで登
               <% end %>
             </div>
           </div>
