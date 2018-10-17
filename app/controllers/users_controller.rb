@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :move_to_sign_in
 
   def show
     @purchase_items = Item.where(buyer_id: current_user.id).where(trading_status: 0)
@@ -27,6 +28,12 @@ class UsersController < ApplicationController
   end
 
   def review_history_poor
+  end
+
+  private
+
+  def move_to_sign_in
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end

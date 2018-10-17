@@ -121,7 +121,7 @@
        <!--  <a href="/addresses/new" class="mypage-nav-list-item "> -->
     </li>
       <li>
-        <%= link_to new_payjp_path, class: "mypage-nav-list-item" do %>
+        <%= link_to payjp_path(current_user), class: "mypage-nav-list-item" do %>
           支払い方法
           <i class="fas fa-angle-right"></i>
         <% end %>
