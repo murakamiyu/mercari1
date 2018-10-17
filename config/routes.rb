@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :payjps, only: [:new, :create]
   resources :addresses, only: [:new, :create, :edit, :update]
   resources :credits, only: [:index, :new, :create, :destroy]
-  resources :items, only: [:index, :show, :new, :create, :edit, :update]
+  resources :items, only: [:index, :show, :new, :create, :edit, :update]do
+    collection do
+      get 'search'
+    end
+  end
   resources :categories, only: [:show]
   resources :brands, only: [:show]
 

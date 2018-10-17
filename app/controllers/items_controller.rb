@@ -34,6 +34,10 @@ class ItemsController < ApplicationController
     item.update(item_params) 
   end
 
+  def search
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").limit(8)
+  end
+
   private
 
   def item_params

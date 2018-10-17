@@ -7,11 +7,15 @@
           <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2682216493" alt="mercari" width="134" height="36">
         <% end %>
       </h1>
-
-      <form action="https://www.mercari.com/jp/search/" class="pc-header-form l-right">
+      <div class="x"></div>
+      <%= form_tag('/items/search', class: "pc-header-form l-right", method: :get) do %>
         <input type="search" name="keyword" value="" placeholder="キーワードから探す" class="input-default">
-        <i class="icon-search"></i>
-      </form>
+          <button class="btn-search" title="検索" type="submit">
+            <i class="icon-search"></i>
+          </button>
+        </input>
+        <!-- <div id="item-search-result"></div> -->
+      <% end %>
     </div>
 
     <div class="pc-header-nav-box clearfix">
