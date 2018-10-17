@@ -7,11 +7,6 @@ Rails.application.routes.draw do
       get 'notification'
       get 'todo'
       get 'like_history'
-      get 'listings_listing'
-      get 'listings_in_progress'
-      get 'listings_completed'
-      get 'purchase'
-      get 'purchased'
       get 'news'
       get 'review_history'
       get 'review_history_great'
@@ -25,15 +20,15 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, :new, :create, :edit, :update]
   resources :categories, only: [:show]
   resources :brands, only: [:show]
-  
+
   namespace :purchase_pre do
     resources :items, only: [:show,:update]
   end
-  
+
   namespace :order_status do
     resources :items, only: [:index,:show]
   end
-  
+
   namespace :listings do
     resources :items, only: [:index, :show]
   end
@@ -52,6 +47,10 @@ Rails.application.routes.draw do
 
   namespace :purchased do
     resources :items, only: [:index, :show]
+  end
+
+  namespace :profile do
+    resources :users, only: [:edit, :update]
   end
 
   get 'mains/profile', to: 'mains#profile'
@@ -79,7 +78,7 @@ Rails.application.routes.draw do
   get 'mains/purchased', to: 'mains#mypage_purchased'
   get 'mains/news', to: 'mains#mypage_news'
 
-  
+
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'

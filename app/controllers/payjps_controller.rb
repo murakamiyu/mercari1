@@ -9,6 +9,6 @@ class PayjpsController < ApplicationController
       :card  => params['payjp-token']
     )
     Customer.create(token: customer.id, user_id: current_user.id)
-    redirect_to mains_top_path
+    redirect_to user_path(current_user)
   end
 end

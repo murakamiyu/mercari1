@@ -3,7 +3,7 @@
   <div class="l-content">
     <section class="l-chapter-container">
       <h2 class="l-chapter-head">プロフィール</h2>
-      <%= form_for current_user, html: {class: ''} do |f| %>
+      <%= form_for([:profile, current_user], html: {class: ''}) do |f| %>
         <div class="setting-profile-icon">
           <figure>
             <img src="//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png" width="60" height="60">
@@ -14,7 +14,6 @@
         <div class="setting-profile-content">
           <%= f.text_area :introduction, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: 'textarea-default' %>
           <%= f.submit "変更する", class: 'btn-default btn-red' %>
-
         </div>
       <% end %>
     </section>
