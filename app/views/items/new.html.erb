@@ -144,7 +144,7 @@
               </div>
               <!-- <removed_queries> -->
               <div class="sell-content clearfix">
-                <h3 class="sell-sub-head">販売価格(300〜9,999,999)</h3>
+                <h3 class="sell-sub-head">販売価格(500〜9,999,999)</h3>
                 <a href="/jp/help_center/article/64/" target="_blank" class="form-question">?</a>
                 <div class="sell-form-box">
                   <ul class="sell-price">
@@ -154,7 +154,7 @@
                         <div class="l-right sell-price-input">¥
                           <div>
 
-                            <%= f.text_field :price, class: "input-default", placeholder: "例）300", value: "" %>
+                            <%= f.number_field :price, class: "input-default", placeholder: "例）300", value: "" %>
                           </div>
                         </div>
                       </div>

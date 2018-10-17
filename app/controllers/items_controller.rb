@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
+  before_action :move_to_sign_in, only: [:new]
 
   def index
     @ladies = Item.where(category_id: 1..140).order("RAND()").limit(4)
@@ -63,6 +64,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def move_to_sign_in
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end
 

@@ -73,3 +73,5 @@ gem 'devise'
 gem 'payjp'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'fog-aws'
+
