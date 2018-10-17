@@ -169,10 +169,18 @@
       </ul>
       <div class="tab-content">
         <ul id="mypage-tab-transaction-now" class="mypage-item-list tab-pane active">
-          <li class="mypage-item-not-found bold">取引中の商品がありません</li>
+          <% if @purchase_items.presence %>
+            <%= render partial: "purchase_item", collection: @purchase_items %>
+          <% else %>
+            <li class="mypage-item-not-found bold">取引中の商品がありません</li>
+          <% end %>
         </ul>
         <ul id="mypage-tab-transaction-old" class="mypage-item-list tab-pane">
-          <li class="mypage-item-not-found bold">過去に取引した商品がありません</li>
+          <% if @purchased_items.presence %>
+            <%= render partial: "purchased_item", collection: @purchased_items %>
+          <% else %>
+            <li class="mypage-item-not-found bold">過去に取引した商品がありません</li>
+          <% end %>
         </ul>
       </div>
     </section>
