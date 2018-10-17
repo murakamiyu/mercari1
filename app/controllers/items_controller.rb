@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :edit]
   before_action :move_to_sign_in, only: [:new]
 
   def index
@@ -30,9 +30,27 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     item = Item.find(params[:id])
-    item.update(item_params) 
+    if item.seller_id == current_user.id
+      item.update(item_params) 
+      redirect_to :root, notice: '編集に成功しました'
+    else
+      redirect_to :edit_item , alert: '編集に失敗しました'
+    end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.seller_id == current_user.id
+     item.destroy 
+     redirect_to :root, notice: '商品を削除しました'
+    else
+      redirect_to :edit_item , alert: '編集に失敗しました'
+    end
   end
 
   def search
