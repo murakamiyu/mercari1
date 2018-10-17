@@ -35,11 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").limit(4)
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").limit(8)
   end
 
   private
