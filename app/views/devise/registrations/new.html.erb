@@ -25,6 +25,15 @@
       <section class="l-single-container">
     <h2 class="l-chapter-head">会員情報入力</h2>
       <div class="l-single-content">
+
+        <button id="facebook-login" class="btn-default btn-sns btn-sns-facebook">
+                <i class="icon-facebook"></i>
+                <%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, class: "post" %>
+              </button>
+              <button id="google-login" class="btn-default btn-sns btn-sns-google">
+                <i class="icon-google-plus"></i>
+                Googleで登録
+              </button>
 <div class="form-group">
           <%= f.label :nickname, "ニックネーム" %>
          <span class="form-require">必須</span>
