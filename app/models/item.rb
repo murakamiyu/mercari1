@@ -18,10 +18,9 @@ class Item < ApplicationRecord
   enum days_to_ship: %i(a_day_two two_three four_seven)
 
   validates :images, length: {maximum: MAX_POST_IMAGES_LENGTH}
-
+  validates :price, numericality: true, numericality: {greater_than_or_equal_to: 500, less_than: 10000000 }
   validates :name, 
             :text,
-            :price, 
             presence: true
 
   def benefit_from_selling
