@@ -7,11 +7,6 @@ Rails.application.routes.draw do
       get 'notification'
       get 'todo'
       get 'like_history'
-      get 'listings_listing'
-      get 'listings_in_progress'
-      get 'listings_completed'
-      get 'purchase'
-      get 'purchased'
       get 'news'
       get 'review_history'
       get 'review_history_great'
@@ -54,6 +49,10 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show]
   end
 
+  namespace :profile do
+    resources :users, only: [:edit, :update]
+  end
+
   get 'mains/profile', to: 'mains#profile'
   get 'mains/card', to: 'mains#card'
   get 'mains/card_new', to: 'mains#creditnew'
@@ -79,7 +78,6 @@ Rails.application.routes.draw do
   get 'mains/purchased', to: 'mains#mypage_purchased'
   get 'mains/news', to: 'mains#mypage_news'
   get 'mains/account', to: 'mains#account'
-
 
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
