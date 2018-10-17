@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   def show
+    @purchase_items = Item.where(buyer_id: current_user.id).where(trading_status: 0)
+    @purchased_items = Item.where(buyer_id: current_user.id).where(trading_status: 1)
   end
 
   def notification
