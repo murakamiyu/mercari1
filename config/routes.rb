@@ -77,7 +77,7 @@ Rails.application.routes.draw do
   get 'mains/purchase', to: 'mains#mypage_purchase'
   get 'mains/purchased', to: 'mains#mypage_purchased'
   get 'mains/news', to: 'mains#mypage_news'
-
+  get 'mains/account', to: 'mains#account'
 
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
