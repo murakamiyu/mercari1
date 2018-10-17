@@ -5,10 +5,6 @@ class TestsController < ApplicationController
   def order_status
   end
 
-  def account
-    render :layout => nil
-  end
-
   def sms_confirmation
     render :layout => nil
   end
