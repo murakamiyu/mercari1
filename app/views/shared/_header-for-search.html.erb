@@ -9,7 +9,7 @@
       </h1>
       <div class="x"></div>
       <%= form_tag('/items/search', class: "pc-header-form l-right", method: :get) do %>
-        <input type="search" name="keyword" value="" placeholder="キーワードから探す" class="input-default">
+        <input id="item-search-form" type="search" name="keyword" value="" placeholder="キーワードから探す" class="input-default">
           <button class="btn-search" title="検索" type="submit">
             <i class="icon-search"></i>
           </button>
