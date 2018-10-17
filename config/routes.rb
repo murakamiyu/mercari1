@@ -25,15 +25,15 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, :new, :create, :edit, :update]
   resources :categories, only: [:show]
   resources :brands, only: [:show]
-  
+
   namespace :purchase_pre do
     resources :items, only: [:show,:update]
   end
-  
+
   namespace :order_status do
     resources :items, only: [:index,:show]
   end
-  
+
   namespace :listings do
     resources :items, only: [:index, :show]
   end
@@ -78,8 +78,9 @@ Rails.application.routes.draw do
   get 'mains/purchase', to: 'mains#mypage_purchase'
   get 'mains/purchased', to: 'mains#mypage_purchased'
   get 'mains/news', to: 'mains#mypage_news'
+  get 'mains/account', to: 'mains#account'
 
-  
+
   get 'tests/order_status_waiting', to: 'tests#order_status_waiting'
   get 'tests/account', to: 'tests#account'
   get 'tests/order_status_after_shipping', to: 'tests#order_status_after_shipping'
