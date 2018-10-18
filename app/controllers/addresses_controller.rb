@@ -9,11 +9,9 @@ class AddressesController < ApplicationController
   end
 
   def create
-
-      @address = Address.new(address_params)
-
+    @address = Address.new(address_params)
     if @address.save
-      redirect_to mains_top_path, notice: '住所を変更しました'
+      redirect_to user_path(current_user), notice: '住所を変更しました'
     else
       render :new
 
@@ -22,7 +20,7 @@ class AddressesController < ApplicationController
 
   def update
     if @address.update(address_params)
-      redirect_to mains_top_path
+      redirect_to user_path(current_user)
     else
       render :new
     end
