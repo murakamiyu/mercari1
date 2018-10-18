@@ -75,11 +75,6 @@ Rails.application.routes.draw do
   get 'mains/sales_tra_history', to: 'mains#sales_tra_history'
   get 'mains/sales_tra_account_register', to: 'mains#sales_tra_account_register'
 
-  get 'mains/top', to: 'mains#mypage'
-  get 'mains/notification', to: 'mains#mypage_notification'
-  get 'mains/todo', to: 'mains#mypage_todo'
-  get 'mains/purchase', to: 'mains#mypage_purchase'
-  get 'mains/purchased', to: 'mains#mypage_purchased'
   get 'mains/news', to: 'mains#mypage_news'
   get 'mains/account', to: 'mains#account'
 
