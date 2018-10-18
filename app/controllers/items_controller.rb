@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit]
   before_action :move_to_sign_in, only: [:new]
+  before_action :user_check, only: [:update, :destroy]
 
   def index
     @ladies = Item.where(category_id: 1..140).order("RAND()").limit(4)
@@ -8,7 +9,7 @@ class ItemsController < ApplicationController
     @cosmes = Item.where(category_id: 141..260).order("created_at DESC").limit(4)
     @babies = Item.where(category_id: 261..387).order("created_at DESC").limit(4)
     @chanels = Item.where(brand_id: 1).order("created_at DESC").limit(4)
-    @supremes = Item.where(brand_id: 28).limit(4)
+    @supremes = Item.order("created_at DESC").limit(4)
     @nikes = Item.order("RAND()").limit(4)
   end
 
@@ -35,8 +36,7 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find(params[:id])
-    if item.seller_id == current_user.id
-      item.update(item_params) 
+    if item.update(item_params) 
       redirect_to :root, notice: '編集に成功しました'
     else
       redirect_to :edit_item , alert: '編集に失敗しました'
@@ -45,12 +45,8 @@ class ItemsController < ApplicationController
 
   def destroy
     item = Item.find(params[:id])
-    if item.seller_id == current_user.id
-     item.destroy 
-     redirect_to :root, notice: '商品を削除しました'
-    else
-      redirect_to :edit_item , alert: '編集に失敗しました'
-    end
+    item.destroy 
+    redirect_to :root, notice: '商品を削除しました'
   end
 
   def search
@@ -86,6 +82,10 @@ class ItemsController < ApplicationController
 
   def move_to_sign_in
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def user_check
+    redirect_to root_path, alert: '商品情報の編集は出品者のみ可能です' unless item.seller_id == current_user.id
   end
 end
 
