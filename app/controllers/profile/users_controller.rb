@@ -5,8 +5,11 @@ class Profile::UsersController < ApplicationController
   end
 
   def update
-    current_user.update(profile_params)
-    redirect_to user_path(current_user)
+    if current_user.update(profile_params)
+      redirect_to user_path(current_user), notice: 'プロフィールを変更しました'
+    else
+      render :edit
+    end
   end
 
   private
