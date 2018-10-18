@@ -12,7 +12,7 @@
             <% end %>
             <!-- 以下js使用 -->
             <div class="owl-item-inner set" data-thumbnail-class-name="">
-              <% @item.images.first(1).each do |content| %>
+              <% @item.images.each do |content| %>
                <%= image_tag content.image, class: "owl-lazy active-image" %>
               <% end %>
             </div>
