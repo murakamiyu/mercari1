@@ -390,6 +390,8 @@ i {
   color: #fff;
 }
 
+
+
 .btn-default {
   display: block;
   width: 100%;
@@ -409,6 +411,17 @@ i {
 
 .btn-gray {
   background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+}
+
+.sell-btn-box .btn-black {
+  width: 45%;
+  margin: 24px auto 0;
+}
+
+.btn-black {
+  background: #000000;
   border: 1px solid #aaa;
   color: #fff;
 }
