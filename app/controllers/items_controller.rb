@@ -85,6 +85,7 @@ class ItemsController < ApplicationController
   end
   
   def user_check
+    item = Item.find(params[:id])
     redirect_to root_path, alert: '商品情報の編集は出品者のみ可能です' unless item.seller_id == current_user.id
   end
 end
