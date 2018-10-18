@@ -12,15 +12,17 @@
             <% end %>
             <!-- 以下js使用 -->
             <div class="owl-item-inner set" data-thumbnail-class-name="">
-              <% @item.images.each do |content| %>
-               <%= image_tag content.image, class: "owl-lazy active-image" %>
+              <% @item.images.each_with_index do |content, i| %>
+               <% i = 'image' + "#{i}" %>
+               <%= image_tag content.image, id: i ,class: "owl-lazy active-image" %>
               <% end %>
             </div>
             <div class="owl-nav disabled"></div>
             <div class="owl-dots">
               <div class="owl-dot-inner" data-thumbnail-class-name="">
-                <% @item.images.each do |content| %>
-                 <%= image_tag content.image, class: "owl-lazy" %>
+                <% @item.images.each_with_index do |content, i| %>
+                <% i = 'thumb' + "#{i}" %>
+                 <%= image_tag content.image, id: i, class: "owl-lazy" %>
                 <% end %>
               </div>
             </div>

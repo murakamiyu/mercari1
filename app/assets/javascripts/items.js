@@ -1,16 +1,18 @@
 $(function() {
- 
-  //画像にマウスを乗せたら発動
-  $('img').hover(function() {
- 
-    //画像のsrc属性が別画像のパスに切り替わる
-    $(this).attr('src', 'images/hover_on.png');
- 
-  //ここにはマウスを離したときの動作を記述
-  }, function() {
- 
-    //画像のsrc属性を元の画像のパスに戻す
-    $(this).attr('src', 'images/hover_off.png');
- 
+  $('#thumb0').hover(function() {
+    $('#image0').css('display','block'),
+    $('#image1,#image2,#image3').css('display','none');
+  });
+  $('#thumb1').hover(function() {
+    $('#image1').css('display','block'),
+    $('#image0,#image2,#image3').css('display','none');
+  });
+  $('#thumb2').hover(function() {
+    $('#image2').css('display','block'),
+    $('#image1,#image0,#image3').css('display','none');
+  });
+  $('#thumb3').hover(function() {
+    $('#image3').css('display','block'),
+    $('#image1,#image0,#image2').css('display','none');
   });
 });
