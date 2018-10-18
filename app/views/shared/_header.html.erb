@@ -1769,65 +1769,65 @@
                   <figcaption><%= current_user.nickname %></figcaption>
                 </figure>
                 <ul class="pc-header-mypage-review-listing">
-                  <li><a href="#">評価: 2</a></li>
-                  <li><a href="">出品数: <%= current_user.selling_item_ids.length %></a></li>
+                  <li><a href="">評価: 2</a></li>
+                  <li><%= link_to listings_items_path do %>出品数: <%= current_user.selling_item_ids.length %><% end %></li>
                 </ul>
                 <ul class="pc-header-mypage-sales-point">
                   <li>
                     <a href="#" class="clearfix">
                       <div class="l-left">売上金</div>
-                      <div class="l-right">¥ 0<i class="icon-arrow-right"></i></div>
+                      <div class="l-right">¥ 0<i class="fas fa-angle-right"></i></div>
                     </a>
                   </li>
                   <li>
                     <a href="#" class="clearfix">
                       <div class="l-left">ポイント</div>
-                      <div class="l-right">P 0<i class="icon-arrow-right"></i></div>
+                      <div class="l-right">P 100<i class="fas fa-angle-right"></i></div>
                     </a>
                   </li>
                 </ul>
               </div>
               <ul class="mypage-nav-list">
                 <li>
-                  <a href="#" class="mypage-nav-list-item">
+                  <%= link_to like_history_user_path(current_user), class: "mypage-nav-list-item" do %> 
                     いいね！一覧
-                    <i class="icon-arrow-right"></i>
-                  </a>
+                    <i class="fas fa-angle-right"></i>
+                  <% end %>
                 </li>
 
                 <li>
-                  <a href="#" class="mypage-nav-list-item">
+                  <%= link_to listings_items_path, class: "mypage-nav-list-item" do %> 
                     出品した商品 - 出品中
-                    <i class="icon-arrow-right"></i>
-                  </a>
-                </li>
-
-                                  <li>
-                  <a href="#" class="mypage-nav-list-item">
-                    出品した商品 - 取引中
-                    <i class="icon-arrow-right"></i>
-                  </a>
-                </li>
-
-                                  <li>
-                  <a href="#" class="mypage-nav-list-item">
-                    出品した商品 - 売却済み
-                    <i class="icon-arrow-right"></i>
-                  </a>
-                </li>
-
-                                  <li>
-                  <a href="#" class="mypage-nav-list-item">
-                    購入した商品 - 取引中
-                    <i class="icon-arrow-right"></i>
-                  </a>
+                    <i class="fas fa-angle-right"></i>
+                  <% end %>
                 </li>
 
                 <li>
-                  <a href="#" class="mypage-nav-list-item">
+                  <%= link_to in_progress_items_path, class: "mypage-nav-list-item" do %> 
+                    出品した商品 - 取引中
+                    <i class="fas fa-angle-right"></i>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to completed_items_path, class: "mypage-nav-list-item" do %>
+                    出品した商品 - 売却済み
+                    <i class="fas fa-angle-right"></i>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to purchase_items_path, class: "mypage-nav-list-item" do %>
+                    購入した商品 - 取引中
+                    <i class="fas fa-angle-right"></i>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to purchased_items_path, class: "mypage-nav-list-item" do %>
                     購入した商品 - 過去の取引
-                    <i class="icon-arrow-right"></i>
-                  </a>
+                    <i class="fas fa-angle-right"></i>
+                  <% end %>
                 </li>
               </ul>
             </div>
@@ -1852,7 +1852,7 @@
                     <div class="mypage-item-text">明日、クーポンの有効期限が切れます！タップして詳細を確認しましょう。</div>
                       <time><i class="icon-time"></i><span>3 時間前</span></time>
                   </div>
-                  <i class="icon-arrow-right"></i>
+                  <i class="fas fa-angle-right"></i>
                 </a>
               </li>
 
@@ -1863,7 +1863,7 @@
                     <div class="mypage-item-text">myさんがあなたを評価しました。これで取引完了です。</div>
                       <time><i class="icon-time"></i><span>7 時間前</span></time>
                   </div>
-                  <i class="icon-arrow-right"></i>
+                  <i class="fas fa-angle-right"></i>
                 </a>
               </li>
 
