@@ -8,7 +8,7 @@
         </figcaption>
       <% end %>
       <% item.images.first(1).each do |content| %>
-       <%= image_tag content.image %>
+       <%= image_tag content.image.url %>
       <% end %>
     </figure>
     <div class="items-box-body">
