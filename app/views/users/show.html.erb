@@ -10,11 +10,11 @@
         <div class="mypage-number">
           <div>
             評価
-            <span class="bold">0</span>
+            <span class="bold">2</span>
           </div>
           <div>
             出品数
-            <span class="bold">0</span>
+            <span class="bold"><%= current_user.selling_item_ids.length %></span>
           </div>
         </div>
       </a>
@@ -53,7 +53,7 @@
                   <span>42 分前</span>
                 </time>
               </div>
-              <i class="icon-arrow-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
           </li>
           <li>
@@ -68,7 +68,7 @@
                   <span>2 日前</span>
                 </time>
               </div>
-              <i class="icon-arrow-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
           </li>
           <li>
@@ -83,7 +83,7 @@
                   <span>2 日前</span>
                 </time>
               </div>
-              <i class="icon-arrow-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
           </li>
           <li>
@@ -98,7 +98,7 @@
                   <span>3 日前</span>
                 </time>
               </div>
-              <i class="icon-arrow-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
           </li>
           <li>
@@ -113,7 +113,7 @@
                   <span>3 日前</span>
                 </time>
               </div>
-              <i class="icon-arrow-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
           </li>
           <li class="mypage-go-list">
@@ -187,7 +187,5 @@
   </div>
   <%= render "shared/sidebar" %>
 </main>
-
-
 <%= render "shared/seller-button" %>
 <%= render "shared/footer" %>

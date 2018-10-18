@@ -32,7 +32,7 @@
   top: 0;
 }
 
-.pager-next {
+.pager-next, .pager-next-fix {
   position: absolute;
   top: 0;
 }
@@ -57,10 +57,24 @@
   top: .15em;
 }
 
+.pager-next-fix {
+  top: .15em;
+}
+
 .icon-arrow-left:before {
   content: '\e004';
 }
 
-.pager-next {
+.pager-next, .pager-next-fix {
   right: 0;
 }
+
+.pager-next-fix i {
+  margin-right: 0px;
+}
+
+.pager-next-fix ::before {
+  color: black;
+  font-size: 14px;
+}
+
