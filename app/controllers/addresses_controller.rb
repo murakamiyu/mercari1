@@ -35,6 +35,6 @@ private
   end
 
   def address_params
-    params.require(:address).permit(:area, :city, :postal_code, :address1, :address2).merge(user_id: current_user.id)
+    params.require(:address).permit(:area, :city, :postal_code, :address1, :address2, :family_name, :first_name, :family_name_kana, :first_name_kana).merge(user_id: current_user.id)
   end
 end

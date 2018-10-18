@@ -16,6 +16,22 @@
     </div>
   <% end %>
         <div class="l-single-content">
+
+          <div class="form-group">
+           <%= f.label :family_name, "お名前" %>
+           <span class="form-require">必須</span>
+           <%= f.text_field :family_name, autofocus: true, class: 'input-default', placeholder: "例）メルカリ" %>
+           <%= f.text_field :first_name, autofocus: true, class: 'input-default', placeholder: "例）太郎" %>
+          </div>
+
+          <div class="form-group">
+             <%= f.label :family_name, "お名前カナ" %>
+             <span class="form-require">必須</span>
+             <%= f.text_field :family_name_kana, autofocus: true, class: 'input-default', placeholder: "例）メルカリ" %>
+             <%= f.text_field :first_name_kana, autofocus: true, class: 'input-default', placeholder: "例）タロウ" %>
+          </div>
+
+
             <div class="form-group">
               <%= f.label :area, "都道府県" %>
              <span class="form-require">必須</span>
