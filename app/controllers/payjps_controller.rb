@@ -14,7 +14,7 @@ class PayjpsController < ApplicationController
       :card  => params['payjp-token']
     )
     Customer.create(token: customer.id, user_id: current_user.id)
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), notice: 'クレジットカードを登録しました'
   end
 
   private

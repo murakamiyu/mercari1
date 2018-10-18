@@ -127,11 +127,11 @@
         <% end %>
       </li>
       <li>
-        <a href="/mains/email_password/" class="mypage-nav-list-item ">
+        <%= link_to edit_user_registration_path, class: "mypage-nav-list-item" do %>
           メール/パスワード
-      <i class="fas fa-angle-right"></i>
-    </a>
-    </li>
+          <i class="fas fa-angle-right"></i>
+        <% end %>
+      </li>
       <li>
         <a href="/mains/identification" class="mypage-nav-list-item ">
           本人情報

@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to :root
+      redirect_to :root, notice: '出品しました'
     else
       redirect_to :new_item , alert: '出品に失敗しました'
     end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'items#index'
-  resources :users do
+  resources :users , only: [:show] do
     member do
       get 'notification'
       get 'todo'
