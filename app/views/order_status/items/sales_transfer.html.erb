@@ -10,11 +10,11 @@
               現在の売上金
             </div>
             <div class="l-right">
-                <!-- <% t = 0 %> -->
-                <% current_user.selling_items.each do |p|%>
-                <%= p %>
+                <% t = 0 %> 
+                <% @items.each do |a_price|%>
+                <% t = a_price.benefit_from_selling.floor + t %>
                 <% end %>
-              ¥ 
+              ¥ <%= t %>
             </div>
           </div>
         </li>

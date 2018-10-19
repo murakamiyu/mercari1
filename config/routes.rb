@@ -30,7 +30,11 @@ Rails.application.routes.draw do
   end
 
   namespace :order_status do
-    resources :items, only: [:index,:show]
+    resources :items, only: [:index,:show] do
+      collection do
+        get 'pre_index'
+      end
+    end
   end
 
   namespace :listings do

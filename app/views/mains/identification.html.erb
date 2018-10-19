@@ -61,7 +61,10 @@
       </div>
 
 
-      <button type="submit" class="btn-default btn-red">登録する</button>
+      <!-- <button type="submit" class="btn-default btn-red">登録する</button> -->
+      <%= link_to user_path(current_user), class: "btn-default btn-red" do %>
+      登録する
+      <% end %>
 
       <div class="form-group text-right">
         <p>
