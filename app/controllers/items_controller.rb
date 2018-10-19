@@ -4,10 +4,10 @@ class ItemsController < ApplicationController
   before_action :user_check, only: [:update, :destroy]
 
   def index
-    @ladies = Item.where(category_id: 1..140).order("created_at DESC").limit(4)
-    @mens = Item.where(category_id: 141..260).order("RAND()").limit(4)
+    @ladies = Item.where(category_id: 1).order("created_at DESC").limit(4)
+    @mens = Item.where(category_id: 2).order("RAND()").limit(4)
     @cosmes = Item.order("created_at DESC").limit(4)
-    @babies = Item.where(category_id: 261..387).order("created_at DESC").limit(4)
+    @babies = Item.where(category_id: 3).order("created_at DESC").limit(4)
     @chanels = Item.where(brand_id: 1).order("created_at DESC").limit(4)
     @supremes = Item.where(brand_id: 28).order("created_at DESC").limit(4)
     @nikes = Item.order("created_at DESC").limit(4)
