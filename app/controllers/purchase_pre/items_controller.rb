@@ -36,15 +36,15 @@ class PurchasePre::ItemsController < ApplicationController
   end
 
   def move_to_sign_in
-    redirect_to new_user_session_path unless user_signed_in?
+    redirect_to new_user_session_path, alert: '購入前にログインを行なってください' unless user_signed_in?
   end
 
   def move_to_new_address
-    redirect_to new_address_path unless current_user.address.present?
+    redirect_to new_address_path, alert: '購入前に住所を登録してください' unless current_user.address.present?
   end
     
   def move_to_new_payjp
-    redirect_to new_payjp_path unless current_user.customer.present?
+    redirect_to new_payjp_path, alert: 'クレジットカード情報を登録してください' unless current_user.customer.present?
   end
 
 end
