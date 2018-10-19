@@ -14,7 +14,7 @@
                 <% @items.each do |a_price|%>
                 <% t = a_price.benefit_from_selling.floor + t %>
                 <% end %>
-              ¥ <%= t %>
+              ¥ <%= number_with_delimiter(t) %>
             </div>
           </div>
         </li>

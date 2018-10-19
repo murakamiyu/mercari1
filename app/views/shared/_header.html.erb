@@ -1784,7 +1784,7 @@
                       <% current_user.sold_items.each do |a_price|%>
                       <% t = a_price.benefit_from_selling.floor + t %>
                       <% end %>
-                      <div class="l-right">¥ <%= t %><i class="fas fa-angle-right"></i></div>
+                      <div class="l-right">¥ <%= number_with_delimiter(t) %><i class="fas fa-angle-right"></i></div>
                     </a>
                   </li>
                   <li>
