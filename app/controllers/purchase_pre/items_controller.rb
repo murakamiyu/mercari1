@@ -10,7 +10,7 @@ class PurchasePre::ItemsController < ApplicationController
     item = Item.find(params[:id])
 
     if current_user.id == item.seller_id
-      redirect_to root_path 
+      redirect_to root_path, alert: '出品者と購入者が同じです。商品を再度選択してください。'
     else
       item.update(item_params) 
       
