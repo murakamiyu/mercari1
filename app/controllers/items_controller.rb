@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def index
     @ladies = Item.where(category_id: 1).order("created_at DESC").limit(4)
-    @mens = Item.where(category_id: 2).order("RAND()").limit(4)
+    @mens = Item.where(category_id: 2).order("created_at DESC").limit(4)
     @cosmes = Item.order("created_at DESC").limit(4)
     @babies = Item.where(category_id: 3).order("created_at DESC").limit(4)
     @chanels = Item.where(brand_id: 1).order("created_at DESC").limit(4)
