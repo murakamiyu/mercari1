@@ -1776,7 +1776,11 @@
                   <li>
                     <a href="#" class="clearfix">
                       <div class="l-left">売上金</div>
-                      <div class="l-right">¥ 0<i class="fas fa-angle-right"></i></div>
+                      <% t = 0 %> 
+                      <% current_user.sold_items.each do |a_price|%>
+                      <% t = a_price.benefit_from_selling.floor + t %>
+                      <% end %>
+                      <div class="l-right">¥ <%= t %><i class="fas fa-angle-right"></i></div>
                     </a>
                   </li>
                   <li>
